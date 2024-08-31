@@ -212,3 +212,8 @@ html{
 .menulist{
   --menu-bg: transparent;
 }
+
+ul{
+  margin-left: 2rem;
+  list-style-image: url("/images/checkmark.svg");
+}

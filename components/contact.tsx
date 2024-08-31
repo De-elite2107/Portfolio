@@ -10,7 +10,7 @@ import * as Yup from "yup";
 
 const ContactUs = () => {
     const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
-    const [isLargerThan400] = useMediaQuery("(min-width: 400px)");
+    const [isLargerThan400] = useMediaQuery("(min-width: 600px)");
     const phoneRegex = /^(\+?234)?(\d{10})$/;
     const initialvalues = {
         name: "",
@@ -99,7 +99,7 @@ const ContactUs = () => {
                             <Location/>
                             <Text>Address</Text>
                         </Flex>
-                        <Text>&nbsp; No. 28, Oisamoje Close, Ikola Ogunseye, Lagos</Text>
+                        <Text>No. 28, Oisamoje Close, Ikola Ogunseye, Lagos</Text>
                     </Box>
                 </Flex>
             </Box>

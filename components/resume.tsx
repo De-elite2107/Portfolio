@@ -16,7 +16,7 @@ import DevOps from "@/svgs/devops";
 
 const Resume = () => {
     const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
-    const [isLargerThan400] = useMediaQuery("(min-width: 400px)");
+    const [isLargerThan400] = useMediaQuery("(min-width: 600px)");
     return (
         <>
             <Box
@@ -144,7 +144,7 @@ const Resume = () => {
                         </FancyText>
                     </Text>
                     <Flex flexWrap="wrap">
-                        <Box w="37rem">
+                        <Box w={isLargerThan400? "37rem": "100%"} mr={isLargerThan400 ? "5rem" : ""}>
                             <Box mb="3rem">
                                 <Text mb="1rem">English</Text>
                                 <Flex gap={5} flexWrap="wrap">
@@ -176,8 +176,8 @@ const Resume = () => {
                                 </Flex>
                             </Box>
                         </Box>
-                        <Box mb="3rem" w="37rem">
-                            <Box mb="3rem">
+                        <Box mb="3rem" w={isLargerThan400? "37rem": "100%"}>
+                            <Box>
                                 <Text mb="1rem">French</Text>
                                 <Flex gap={5} flexWrap="wrap">
                                     <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
@@ -206,7 +206,7 @@ const Resume = () => {
                         </FancyText>
                     </Text>
                     <Flex justifyContent="space-between" flexWrap="wrap">
-                        <Box mb="3rem">
+                        <Box pb="3rem" m="auto">
                             <Box mb="1rem" className="eighty" textAlign="center" p="1rem" borderRadius="50%">
                                 <Box p="3rem" bg="#081f37" borderRadius="50%">
                                     80%
@@ -214,7 +214,7 @@ const Resume = () => {
                             </Box>
                             <Text textAlign="center">WordPress</Text>
                         </Box>
-                        <Box mb="3rem">
+                        <Box pb="3rem" m="auto">
                             <Box mb="1rem" className="ninety-eight" textAlign="center" p="1rem" borderRadius="50%">
                                 <Box p="3rem" bg="#081f37" borderRadius="50%">
                                     98%    
@@ -222,7 +222,7 @@ const Resume = () => {
                             </Box>
                             <Text textAlign="center">React / JavaScript</Text>
                         </Box>
-                        <Box mb="3rem">
+                        <Box pb="3rem" m="auto">
                             <Box mb="1rem" className="ninety" textAlign="center" p="1rem" borderRadius="50%">
                                 <Box p="3rem" bg="#081f37" borderRadius="50%">
                                     90%    
@@ -230,7 +230,7 @@ const Resume = () => {
                             </Box>
                             <Text textAlign="center">Database / SQL</Text>
                         </Box>
-                        <Box mb="3rem">
+                        <Box pb="3rem" m="auto">
                             <Box mb="1rem" className="ninety" textAlign="center" p="1rem" borderRadius="50%">
                                 <Box p="3rem" bg="#081f37" borderRadius="50%">
                                     90%    
@@ -238,7 +238,7 @@ const Resume = () => {
                             </Box>
                             <Text textAlign="center">Python / Django</Text>
                         </Box>
-                        <Box mb="3rem">
+                        <Box pb="3rem" m="auto">
                             <Box mb="1rem" className="ninety-five" textAlign="center" p="1rem" borderRadius="50%">
                                 <Box p="3rem" bg="#081f37" borderRadius="50%">
                                     95%    
@@ -258,72 +258,33 @@ const Resume = () => {
                             KNOWLEDGE
                         </FancyText>
                     </Text>
-                    <Flex flexWrap="wrap">
-                        <Box lineHeight={10} mr="5rem">
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Web Technologies</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Front-End Technologies (HTML/CSS, Javascript)</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Back-End Technologies (Python)</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Database and Storage (SQL, PostgreSQL, AWS)</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Server Creation and Configuration</Text>
-                            </Flex>
+                    <Flex flexWrap="wrap" alignItems="start">
+                        <Box lineHeight={10} w={isLargerThan400 ? "20rem" : "100%"} mr={isLargerThan400 ? "5rem" : ""}>
+                            <ul>
+                                <li>Web Technologies</li>
+                                <li>Front-End Technologies (HTML/CSS, Javascript)</li>
+                                <li>Back-End Technologies (Python)</li>
+                                <li>Database and Storage (SQL, PostgreSQL, AWS)</li>
+                                <li>Server Creation and Configuration</li>
+                            </ul>
                         </Box>
-                        <Box lineHeight={10} mr="5rem">
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Cloud Services</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Front-End frameworks (ReactJs, NextJs)</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>RESTful APIs</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Version Control (Git, Github)</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Cyber-Security Basics</Text>
-                            </Flex>
+                        <Box lineHeight={10} w={isLargerThan400 ? "20rem" : "100%"} mr={isLargerThan400 ? "5rem" : ""}>
+                            <ul>
+                                <li>Cloud Services</li>
+                                <li>Front-End frameworks (ReactJs, NextJs)</li>
+                                <li>RESTful APIs</li>
+                                <li>Version Control (Git, Github)</li>
+                                <li>Cyber-Security Basics</li>
+                            </ul>
                         </Box>
-                        <Box lineHeight={10}>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Mobile Application Technologies (Flutter, React Native)</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Responsive Design</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Testing and Debugging</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>Basic Networking</Text>
-                            </Flex>
-                            <Flex alignItems="center" gap={2}>
-                                <Checkmark/>
-                                <Text>DevOps Practices</Text>
-                            </Flex>
+                        <Box lineHeight={10} w={isLargerThan400 ? "20rem" : "100%"} mr={isLargerThan400 ? "5rem" : ""}>
+                            <ul>
+                                <li>Mobile Application Technologies (Flutter, React Native)</li>
+                                <li>Responsive Design</li>
+                                <li>Testing and Debugging</li>
+                                <li>Basic Networking</li>
+                                <li>DevOps Practices</li>
+                            </ul>
                         </Box>
                     </Flex>
                 </Box>
@@ -338,63 +299,63 @@ const Resume = () => {
                         </FancyText>
                     </Text>
                     <Flex flexWrap="wrap">
-                        <Box mr="5rem" w="20rem" mb="3rem">
+                        <Box mr={isLargerThan400 ? "5rem" : ""} w={isLargerThan400 ? "20rem" : "100%"} mb="3rem">
                             <Flex alignItems="center" gap={2} mb="1rem">
                                 <Html5/>
                                 <Text fontWeight={800}>Frontend Development</Text>
                             </Flex>
                             <Text lineHeight={8}>We build the client-side of applications using HTML, CSS, and JavaScript frameworks to create responsive and interactive user interfaces.</Text>
                         </Box>
-                        <Box mr="5rem" w="20rem" mb="3rem">
+                        <Box mr={isLargerThan400 ? "5rem" : ""} w={isLargerThan400 ? "20rem" : "100%"} mb="3rem">
                             <Flex alignItems="center" gap={2} mb="1rem">
                                 <Terminal/>
                                 <Text fontWeight={800}>Backend Development</Text>
                             </Flex>
                             <Text lineHeight={8}>We develop server-side logic, manage databases, and also create application programming interfaces (APIs) that supports the frontend.</Text>
                         </Box>
-                        <Box mr="5rem" w="20rem" mb="3rem">
+                        <Box mr={isLargerThan400 ? "5rem" : ""} w={isLargerThan400 ? "20rem" : "100%"} mb="3rem">
                             <Flex alignItems="center" gap={2} mb="1rem">
                                 <API/>
                                 <Text fontWeight={800}>API Development</Text>
                             </Flex>
                             <Text lineHeight={8}>We design and implement APIs that facilitate communication between different software systems, enabling data exchange and functionality.</Text>
                         </Box>
-                        <Box mr="5rem" w="20rem" mb="3rem">
+                        <Box mr={isLargerThan400 ? "5rem" : ""} w={isLargerThan400 ? "20rem" : "100%"} mb="3rem">
                             <Flex alignItems="center" gap={2} mb="1rem">
                                 <Database/>
                                 <Text fontWeight={800}>Database Management</Text>
                             </Flex>
                             <Text lineHeight={8}>We design, implement, and maintain databases to store and manage application data efficiently, ensuring data integrity and security.</Text>
                         </Box>
-                        <Box mr="5rem" w="20rem" mb="3rem">
+                        <Box mr={isLargerThan400 ? "5rem" : ""} w={isLargerThan400 ? "20rem" : "100%"} mb="3rem">
                             <Flex alignItems="center" gap={2} mb="1rem">
                                 <Optimize/>
                                 <Text fontWeight={800}>Performance Optimization</Text>
                             </Flex>
                             <Text lineHeight={8}>We analyze and enhance application performance to ensure fast load times, efficient resource usage, and a smooth user experience.</Text>
                         </Box>
-                        <Box mr="5rem" w="20rem" mb="3rem">
+                        <Box mr={isLargerThan400 ? "5rem" : ""} w={isLargerThan400 ? "20rem" : "100%"} mb="3rem">
                             <Flex alignItems="center" gap={2} mb="1rem">
                                 <UiUx/>
                                 <Text fontWeight={800}>UI/UX Design</Text>
                             </Flex>
                             <Text lineHeight={8}>We focus on user interface (UI) design and user experience (UX) to create intuitive, user-friendly applications that enhance user satisfaction.</Text>
                         </Box>
-                        <Box mr="5rem" w="20rem" mb="3rem">
+                        <Box mr={isLargerThan400 ? "5rem" : ""} w={isLargerThan400 ? "20rem" : "100%"} mb="3rem">
                             <Flex alignItems="center" gap={2} mb="1rem">
                                 <Quality/>
                                 <Text fontWeight={800}>Testing and Quality Assurance</Text>
                             </Flex>
                             <Text lineHeight={8}>We conduct various tests to ensure the application is bug-free and meets the required standards before deployment.</Text>
                         </Box>
-                        <Box mr="5rem" w="20rem" mb="3rem">
+                        <Box mr={isLargerThan400 ? "5rem" : ""} w={isLargerThan400 ? "20rem" : "100%"} mb="3rem">
                             <Flex alignItems="center" gap={2} mb="1rem">
                                 <Support/>
                                 <Text fontWeight={800}>Technical Support and Maintenance</Text>
                             </Flex>
                             <Text lineHeight={8}>We provide ongoing support and maintenance for applications post-launch to ensure they run smoothly and meet user needs.</Text>
                         </Box>
-                        <Box mr="5rem" w="20rem" mb="3rem">
+                        <Box mr={isLargerThan400 ? "5rem" : ""} w={isLargerThan400 ? "20rem" : "100%"} mb="3rem">
                             <Flex alignItems="center" gap={2} mb="1rem">
                                 <DevOps/>
                                 <Text fontWeight={800}>DevOps Practices</Text>

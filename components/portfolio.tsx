@@ -3,7 +3,7 @@ import { Box, Text, Link, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 
 const Portfolio = () => {
-    const [isLargerThan400] = useMediaQuery("(min-width: 400px)");
+    const [isLargerThan400] = useMediaQuery("(min-width: 600px)");
   return (
         <Box
         m="auto"
