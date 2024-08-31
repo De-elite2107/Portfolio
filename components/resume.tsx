@@ -18,7 +18,7 @@ const Resume = () => {
     const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
     const [isLargerThan400] = useMediaQuery("(min-width: 400px)");
     return (
-        <Box>
+        <>
             <Box
             m="auto"
             w="fit-content"
@@ -404,7 +404,7 @@ const Resume = () => {
                     </Flex>
                 </Box>
             </Box>
-        </Box>
+        </>
     );
 };
 
