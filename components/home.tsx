@@ -1,13 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Box, Flex, Text } from "@chakra-ui/react";
 import React from "react";
-import { Croissant_One, Arvo } from "next/font/google";
 import TypingAnimator from "react-typing-animator";
-const croissant = Croissant_One({
-  subsets: ["latin"],
-  weight: "400",
-});
-
 
 const Homepage = () => {
   return (
@@ -20,7 +14,7 @@ const Homepage = () => {
           textAlign="center"
           textTransform="uppercase"
           fontSize="64px"
-          className={`${croissant.className} glitch-effect`}
+          className='glitch-effect'
           data-text="I'M DELIGHT ADEDIRAN"
           mb="1rem"
           color="#5fc9f3"
