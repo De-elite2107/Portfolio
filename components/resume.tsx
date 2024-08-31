@@ -144,52 +144,52 @@ const Resume = () => {
                         </FancyText>
                     </Text>
                     <Flex flexWrap="wrap">
-                        <Box mb="3rem" mr="10rem">
+                        <Box w="37rem">
                             <Box mb="3rem">
                                 <Text mb="1rem">English</Text>
-                                <Flex h="20px" gap={8} flexWrap="wrap">
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="grey" w="20px" borderRadius="100%"></Box>
+                                <Flex gap={5} flexWrap="wrap">
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="20px" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="grey" w="20px" borderRadius="100%"></Box>
                                 </Flex>
                             </Box>
                             <Box mb="3rem">
                                 <Text mb="1rem">Yoruba</Text>
-                                <Flex h="20px" gap={8}>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="grey" w="20px" borderRadius="100%"></Box>
+                                <Flex gap={5} flexWrap="wrap">
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="grey" w="20px" borderRadius="100%"></Box>
                                 </Flex>
                             </Box>
                         </Box>
-                        <Box mb="3rem">
+                        <Box mb="3rem" w="37rem">
                             <Box mb="3rem">
                                 <Text mb="1rem">French</Text>
-                                <Flex h="20px" gap={8}>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="#1e549f" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="grey" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="grey" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="grey" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="grey" w="20px" borderRadius="100%"></Box>
-                                    <Box h="100%" bg="grey" w="20px" borderRadius="100%"></Box>
+                                <Flex gap={5} flexWrap="wrap">
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="#1e549f" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="grey" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="grey" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="grey" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="grey" w="20px" borderRadius="100%" mr="1rem"></Box>
+                                    <Box h="20px" bg="grey" w="20px" borderRadius="100%"></Box>
                                 </Flex>
                             </Box>
                         </Box>
