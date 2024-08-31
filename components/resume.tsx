@@ -144,7 +144,7 @@ const Resume = () => {
                         </FancyText>
                     </Text>
                     <Flex flexWrap="wrap">
-                        <Box w={isLargerThan400? "37rem": "100%"} mr={isLargerThan400 ? "5rem" : ""}>
+                        <Box w={isLargerThan400? "35rem": "100%"} mr={isLargerThan400 ? "5rem" : ""}>
                             <Box mb="3rem">
                                 <Text mb="1rem">English</Text>
                                 <Flex gap={5} flexWrap="wrap">
@@ -176,7 +176,7 @@ const Resume = () => {
                                 </Flex>
                             </Box>
                         </Box>
-                        <Box mb="3rem" w={isLargerThan400? "37rem": "100%"}>
+                        <Box mb="3rem" w={isLargerThan400? "35rem": "100%"}>
                             <Box>
                                 <Text mb="1rem">French</Text>
                                 <Flex gap={5} flexWrap="wrap">

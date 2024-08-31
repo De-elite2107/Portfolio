@@ -4,7 +4,7 @@ import React from "react";
 import TypingAnimator from "react-typing-animator";
 
 const Homepage = () => {
-  const [isLargerThan400] = useMediaQuery("(min-width: 400px)");
+  const [isLargerThan400] = useMediaQuery("(min-width: 600px)");
   return (
       <Box
         m="auto"
