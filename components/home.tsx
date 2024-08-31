@@ -1,19 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 import React from "react";
 import TypingAnimator from "react-typing-animator";
 
 const Homepage = () => {
+  const [isLargerThan400] = useMediaQuery("(min-width: 400px)");
   return (
       <Box
         m="auto"
         w="fit-content"
         p="150px 0"
+        h="96vh"
       >
         <Text
           textAlign="center"
           textTransform="uppercase"
-          fontSize="64px"
+          fontSize={isLargerThan400 ? "64px" : "48px"}
           className='glitch-effect'
           data-text="I'M DELIGHT ADEDIRAN"
           mb="1rem"

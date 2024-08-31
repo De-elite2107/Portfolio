@@ -1,6 +1,6 @@
 import React from 'react'
 import DownArrowIcon from '@/svgs/down-arrow';
-import { Box, Button, Flex, Input, Link, Text, Textarea } from '@chakra-ui/react'
+import { Box, Button, Flex, Input, Link, Text, Textarea, useMediaQuery } from '@chakra-ui/react'
 import FancyText from '@carefully-coded/react-text-gradient';
 import { ErrorMessage, Form, Formik } from "formik";
 import SmartPhone from '@/svgs/smartphone';
@@ -9,6 +9,8 @@ import Location from '@/svgs/location';
 import * as Yup from "yup";
 
 const ContactUs = () => {
+    const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
+    const [isLargerThan400] = useMediaQuery("(min-width: 400px)");
     const phoneRegex = /^(\+?234)?(\d{10})$/;
     const initialvalues = {
         name: "",
@@ -52,7 +54,7 @@ const ContactUs = () => {
             <Text
                 textAlign="center"
                 textTransform="uppercase"
-                fontSize="64px"
+                fontSize={isLargerThan400 ? "64px" : "48px"}
                 className="glitch-effect"
                 data-text="Contacts"
                 pb="1rem"
@@ -66,7 +68,7 @@ const ContactUs = () => {
                 <DownArrowIcon width={50} height={50} fill="white"/>
             </Link>
         </Box>
-        <Box p="4rem">
+        <Box p={isLargerThan1000 ? "4rem" : "0rem"}>
             <Box color="white">
                 <Text fontSize="24px" mb="3rem">
                     <FancyText gradient={{

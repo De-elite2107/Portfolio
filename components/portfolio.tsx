@@ -1,10 +1,10 @@
 import DownArrowIcon from '@/svgs/down-arrow'
-import { Box, Text, Link } from '@chakra-ui/react'
+import { Box, Text, Link, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 
 const Portfolio = () => {
+    const [isLargerThan400] = useMediaQuery("(min-width: 400px)");
   return (
-    <>
         <Box
         m="auto"
         w="fit-content"
@@ -14,7 +14,7 @@ const Portfolio = () => {
             <Text
                 textAlign="center"
                 textTransform="uppercase"
-                fontSize="64px"
+                fontSize={isLargerThan400 ? "64px" : "48px"}
                 className="glitch-effect"
                 data-text="Portfolio"
                 pb="1rem"
@@ -28,7 +28,6 @@ const Portfolio = () => {
                 <DownArrowIcon width={50} height={50} fill="white"/>
             </Link>
         </Box>
-    </>
   )
 }
 

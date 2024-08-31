@@ -3,20 +3,46 @@ import Homepage from "@/components/home";
 import Portfolio from "@/components/portfolio";
 import Resume from "@/components/resume";
 import FancyText from '@carefully-coded/react-text-gradient';
+import Hamburger from 'hamburger-react';
 import {
   Box,
   Flex,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
+import { RefObject, useEffect, useRef, useState } from "react";
 const Home = () => {
+  const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
+  const [isLargerThan400] = useMediaQuery("(min-width: 400px)");
+  const [isOpen, setOpen] = useState(false);
+  const menuRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+    // Add event listener
+    document.addEventListener('mousedown', handleClickOutside);
+    // Cleanup event listener on unmount
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [])
+  const [tabIndex, setTabIndex] = useState(0);
   return (
     <Box h="100%" bg="#081f37">
-      <Tabs transition="ease-in-out">
+      <Tabs transition="ease-in-out" onChange={(index) => setTabIndex(index)} index={tabIndex}>
         <Box
         position="fixed"
         top={0}
@@ -25,12 +51,11 @@ const Home = () => {
         bg="#081f37"
         >
           <Flex
-            alignItems="end"
+            alignItems="center"
             justifyContent="space-between"
             color="#5fc9f3"
-            flexWrap="wrap"
           >
-            <Text p="1rem" fontSize="24px" >
+            <Text p="1rem" fontSize="24px">
               <FancyText gradient={{
                 type: "linear",
                 from: "#1e549f",
@@ -39,12 +64,65 @@ const Home = () => {
                 De-elite Technologies
               </FancyText>
             </Text>
-            <TabList>
-              <Tab w="10rem">Home</Tab>
-              <Tab w="10rem">Resume</Tab>
-              <Tab w="10rem">Portfolio</Tab>
-              <Tab w="10rem">Contacts</Tab>
-            </TabList>
+            {isLargerThan1000 ? (
+              <TabList>
+                <Tab w="10rem" onClick={()=>{setTabIndex(0)}}>Home</Tab>
+                <Tab w="10rem" onClick={()=>{setTabIndex(1)}}>Resume</Tab>
+                <Tab w="10rem" onClick={()=>{setTabIndex(2)}}>Portfolio</Tab>
+                <Tab w="10rem" onClick={()=>{setTabIndex(3)}}>Contacts</Tab>
+              </TabList>
+            ) : (
+              <Box
+
+                ref={menuRef}
+              >
+                <Menu>
+                  <MenuButton _hover={{"bg" : "none"}} _active={{"bg" : "none"}} bg="none" as={IconButton} icon={<Hamburger toggled={isOpen} toggle={setOpen} color="#2e79ba"/>}/>
+                  <MenuList className="menulist" bg="#1e549f" border="none">
+                    <MenuItem 
+                    _hover={{"bg" : "#081f37"}} 
+                    onClick={() => {
+                      setOpen(false)
+                      setTabIndex(0)
+                    }} 
+                    bg={tabIndex === 0 ? "#081f37" : ""}
+                    >
+                      Home
+                    </MenuItem>
+                    <MenuItem 
+                    _hover={{"bg" : "#081f37"}} 
+                    onClick={() => {
+                      setOpen(false)
+                      setTabIndex(1)
+                    }} 
+                    bg={tabIndex === 1 ? "#081f37" : ""}
+                    >
+                      Resume
+                    </MenuItem>
+                    <MenuItem 
+                    _hover={{"bg" : "#081f37"}} 
+                    onClick={() => {
+                      setOpen(false)
+                      setTabIndex(2)
+                    }} 
+                    bg={tabIndex === 2 ? "#081f37" : ""}
+                    >
+                      Portfolio
+                    </MenuItem>
+                    <MenuItem 
+                    _hover={{"bg" : "#081f37"}} 
+                    onClick={() => {
+                      setOpen(false)
+                      setTabIndex(3)
+                    }} 
+                    bg={tabIndex === 3 ? "#081f37" : ""}
+                    >
+                      Contacts
+                    </MenuItem>
+                  </MenuList>
+                </Menu>
+              </Box>
+            )}
           </Flex>
         </Box>
         <TabPanels>
@@ -62,7 +140,7 @@ const Home = () => {
           </TabPanel>
         </TabPanels>
       </Tabs>
-      <Box position="fixed" display="block" w="100%" zIndex={100} bottom={0} bg="#081f37">
+      <Box position={isLargerThan400 ? "fixed" : "relative"} display="block" w="100%" zIndex={100} bottom={0} bg="#081f37">
         <Text color="#5fc9f3" p="1.5rem" fontSize="14px">&copy; 2024 De-elite Technologies. All rights reserved.</Text>
       </Box>
     </Box>

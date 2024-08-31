@@ -208,3 +208,7 @@ html{
     gray 2%
 );
 }
+
+.menulist{
+  --menu-bg: transparent;
+}
