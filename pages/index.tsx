@@ -77,7 +77,7 @@ const Home = () => {
                     <Tab w="10rem" onClick={()=>{setTabIndex(0)}}>Home</Tab>
                     <Tab w="10rem" onClick={()=>{setTabIndex(1)}}>Resume</Tab>
                     <Tab w="10rem" onClick={()=>{setTabIndex(2)}}>Portfolio</Tab>
-                    <Tab w="10rem" onClick={()=>{setTabIndex(3)}}>Contacts</Tab>
+                    <Tab w="10rem" onClick={()=>{setTabIndex(3)}}>Contact Us</Tab>
                   </TabList>
                 ) : (
                   <Box
@@ -125,7 +125,7 @@ const Home = () => {
                         }} 
                         bg={tabIndex === 3 ? "#1e549f" : ""}
                         >
-                          Contacts
+                          Contact Us
                         </MenuItem>
                       </MenuList>
                     </Menu>
