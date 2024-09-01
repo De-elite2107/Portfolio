@@ -81,49 +81,49 @@ const Home = () => {
                   </TabList>
                 ) : (
                   <Box
-
                     ref={menuRef}
+                    color="white"
                   >
                     <Menu>
                       <MenuButton _hover={{"bg" : "none"}} _active={{"bg" : "none"}} bg="none" as={IconButton} icon={<Hamburger toggled={isOpen} toggle={setOpen} color="#2e79ba"/>}/>
-                      <MenuList className="menulist" bg="#1e549f" border="none">
-                        <MenuItem 
-                        _hover={{"bg" : "#081f37"}} 
+                      <MenuList lineHeight={10} className="menulist" bg="#081f37" border="none" minW="100vw" borderRadius="none">
+                        <MenuItem
+                        justifyContent="center"
                         onClick={() => {
                           setOpen(false)
                           setTabIndex(0)
                         }} 
-                        bg={tabIndex === 0 ? "#081f37" : ""}
+                        bg={tabIndex === 0 ? "#1e549f" : ""}
                         >
                           Home
                         </MenuItem>
-                        <MenuItem 
-                        _hover={{"bg" : "#081f37"}} 
+                        <MenuItem
+                        justifyContent="center"
                         onClick={() => {
                           setOpen(false)
                           setTabIndex(1)
                         }} 
-                        bg={tabIndex === 1 ? "#081f37" : ""}
+                        bg={tabIndex === 1 ? "#1e549f" : ""}
                         >
                           Resume
                         </MenuItem>
-                        <MenuItem 
-                        _hover={{"bg" : "#081f37"}} 
+                        <MenuItem
+                        justifyContent="center"
                         onClick={() => {
                           setOpen(false)
                           setTabIndex(2)
                         }} 
-                        bg={tabIndex === 2 ? "#081f37" : ""}
+                        bg={tabIndex === 2 ? "#1e549f" : ""}
                         >
                           Portfolio
                         </MenuItem>
-                        <MenuItem 
-                        _hover={{"bg" : "#081f37"}} 
+                        <MenuItem
+                        justifyContent="center"
                         onClick={() => {
                           setOpen(false)
                           setTabIndex(3)
                         }} 
-                        bg={tabIndex === 3 ? "#081f37" : ""}
+                        bg={tabIndex === 3 ? "#1e549f" : ""}
                         >
                           Contacts
                         </MenuItem>

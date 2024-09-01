@@ -64,11 +64,11 @@ const ContactUs = () => {
             </Text>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <Text color="white" textAlign="center" mb="5rem">Let's Connect...</Text>
-            <Link href="#" className="mouse_btn" w="fit-content" display="block" m="auto">
+            <Link href="#contacts" className="mouse_btn" w="fit-content" display="block" m="auto">
                 <DownArrowIcon width={50} height={50} fill="white"/>
             </Link>
         </Box>
-        <Box p={isLargerThan1000 ? "4rem" : "0rem"}>
+        <Box id='contacts' p={isLargerThan1000 ? "4rem" : "0rem"}>
             <Box color="white">
                 <Text fontSize="24px" mb="3rem">
                     <FancyText gradient={{

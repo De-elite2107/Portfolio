@@ -37,11 +37,11 @@ const Resume = () => {
                     Resume
                 </Text>
                 <Text color="white" textAlign="center" mb="5rem">My Resume...</Text>
-                <Link href="#" className="mouse_btn" w="fit-content" display="block" m="auto">
+                <Link href="#resume" className="mouse_btn" w="fit-content" display="block" m="auto">
                     <DownArrowIcon width={50} height={50} fill="white"/>
                 </Link>
             </Box>
-            <Box p={isLargerThan1000 ? "4rem" : "0rem"}>
+            <Box id="resume" p={isLargerThan1000 ? "4rem" : "0rem"}>
                 <Box color="white" mb="10rem">
                     <Text fontSize="24px" mb="3rem">
                         <FancyText gradient={{
