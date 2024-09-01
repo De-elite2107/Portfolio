@@ -10,7 +10,7 @@ html{
 @media (min-width:684px) {
     .glitch-effect,
     .glitch-effect-white {
-      position:relative
+      position:relative;
     }
     .glitch-effect-white:after,
     .glitch-effect-white:before,
@@ -216,4 +216,48 @@ html{
 ul{
   margin-left: 2rem;
   list-style-image: url("/images/checkmark.svg");
+}
+@keyframes fromTop{
+  0% {bottom: 15vh; display: none;}
+  100% {bottom: 0vh; display: 100%;}
+}
+@keyframes fromBottom{
+  0% {top: 15vh; display: none;}
+  100% {top: 0vh; display: 100%;}
+}
+@keyframes fromLeft{
+  0% {right: 15vh; display: none;}
+  100% {right: 0vh; display: 100%;}
+}
+@keyframes fromRight{
+  0% {left: 15vh; display: none;}
+  100% {left: 0vh; display: 100%;}
+}
+
+.fromTop{
+  position: relative;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+  animation-name: fromTop;
+}
+
+.fromBottom{
+  position: relative;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+  animation-name: fromBottom;
+}
+
+.fromLeft{
+  position: relative;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+  animation-name: fromLeft;
+}
+
+.fromRight{
+  position: relative;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+  animation-name: fromRight;
 }

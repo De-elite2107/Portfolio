@@ -50,6 +50,7 @@ const ContactUs = () => {
         w="fit-content"
         p="150px 0"
         height="100vh"
+        className="fromTop"
         >
             <Text
                 textAlign="center"

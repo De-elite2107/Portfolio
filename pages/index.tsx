@@ -64,7 +64,7 @@ const Home = () => {
                 color="#5fc9f3"
               >
                 <Text p="1rem" fontSize="24px">
-                  <FancyText gradient={{
+                  <FancyText className="fromLeft" gradient={{
                     type: "linear",
                     from: "#1e549f",
                     to: "#5fc9f3",
@@ -73,7 +73,7 @@ const Home = () => {
                   </FancyText>
                 </Text>
                 {isLargerThan1000 ? (
-                  <TabList>
+                  <TabList className="fromRight">
                     <Tab w="10rem" onClick={()=>{setTabIndex(0)}}>Home</Tab>
                     <Tab w="10rem" onClick={()=>{setTabIndex(1)}}>Resume</Tab>
                     <Tab w="10rem" onClick={()=>{setTabIndex(2)}}>Portfolio</Tab>
@@ -149,7 +149,7 @@ const Home = () => {
             </TabPanels>
           </Tabs>
           <Box position={isLargerThan400 ? "fixed" : "relative"} display="block" w="100%" zIndex={100} bottom={0} bg="#081f37">
-            <Text color="#5fc9f3" p="1.5rem" fontSize="14px">&copy; 2024 De-elite Technologies. All rights reserved.</Text>
+            <Text className="fromBottom" color="#5fc9f3" p="1.5rem" fontSize="14px">&copy; 2024 De-elite Technologies. All rights reserved.</Text>
           </Box>
         </Box>
       ) : (

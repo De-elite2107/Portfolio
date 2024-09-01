@@ -11,6 +11,7 @@ const Homepage = () => {
         w="fit-content"
         p="150px 0"
         h="96vh"
+        className="fromTop"
       >
         <Text
           textAlign="center"

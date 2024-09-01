@@ -24,6 +24,7 @@ const Resume = () => {
             w="fit-content"
             p="150px 0"
             height="100vh"
+            className="fromTop"
             >
                 <Text
                     textAlign="center"
@@ -54,9 +55,9 @@ const Resume = () => {
                     </Text>
                     <Flex alignItems="start" flexWrap="wrap">
                         <Box w="15rem" mr="3rem" pb="3rem" m={isLargerThan1000 ? "none" : "auto"}>
-                            <Img src="./images/Delight.jpg" borderRadius="50%"/>
+                            <Img className="fromLeft" src="./images/Delight.jpg" borderRadius="50%"/>
                         </Box>
-                        <Box w={isLargerThan1000 ? "75%" : "100%"}>
+                        <Box className="fromLeft" w={isLargerThan1000 ? "75%" : "100%"}>
                             <Text mb="3rem" textAlign="justify" lineHeight={7}>
                                 I'm Delight, a passionate full-stack web developer with 4 years of experience in the industry, dedicated to creating seamless, user-friendly web applications that not only meet client requirements but also enhance user experience. I began my journey in web development by exploring HTML, CSS, and JavaScript, which sparked my interest in building dynamic and interactive websites, and over the years, I have expanded my skill set to include modern frameworks and libraries such as React, Angular, and Vue.js for front-end development, as well as Node.js, Express, and Python for back-end services, with proficiency in HTML5, CSS3, JavaScript, and frameworks like React and Angular, and experience in building RESTful APIs and server-side applications using Node.js, Express, and Python (Django/Flask), with a solid understanding of database management with SQL (PostgreSQL, MySQL) databases, and familiarity with CI/CD practices and tools such as Docker and Jenkins, enabling efficient deployment and scaling of applications in cloud environments like AWS and Azure, while being proficient in Git and GitHub for version control and collaboration; I believe in writing clean, maintainable code and following best practices in software development, enjoying collaborating with cross-functional teams to gather requirements and deliver solutions that align with business goals, with problem-solving skills and attention to detail helping me tackle challenges effectively, whether it's debugging code or optimizing application performance, and I am committed to continuous learning, regularly engaging with online courses, attending workshops, and participating in developer communities to stay updated with the latest trends and technologies in web development, always open to new opportunities and collaborations.
                             </Text>
