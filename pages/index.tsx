@@ -83,6 +83,7 @@ const Home = () => {
                   <Box
                     ref={menuRef}
                     color="white"
+                    className="fromRight"
                   >
                     <Menu>
                       <MenuButton _hover={{"bg" : "none"}} _active={{"bg" : "none"}} bg="none" as={IconButton} icon={<Hamburger toggled={isOpen} toggle={setOpen} color="#2e79ba"/>}/>
