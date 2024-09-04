@@ -81,27 +81,33 @@ const ContactUs = () => {
                     </FancyText>
                 </Text>
                 <Flex flexWrap="wrap">
-                    <Box mb="3rem" w="25rem">
-                        <Flex alignItems="center" mb="1rem" gap={2}>
-                            <SmartPhone/>
-                            <Text>Phone</Text>
-                        </Flex>
-                        <Text>+234 708 954 7793</Text>
-                    </Box>
-                    <Box mb="3rem" w="25rem">
-                        <Flex alignItems="center" mb="1rem" gap={2}>
-                            <Email/>
-                            <Text>Email</Text>
-                        </Flex>
-                        <Text>delightadediran21@gmail.com</Text>
-                    </Box>
-                    <Box mb="3rem" w="25rem">
-                        <Flex alignItems="center" mb="1rem" gap={2}>
-                            <Location/>
-                            <Text>Address</Text>
-                        </Flex>
-                        <Text>No. 28, Oisamoje Close, Ikola Ogunseye, Lagos</Text>
-                    </Box>
+                    <Link href='tel:+2347089547793' target='_blank'>
+                        <Box mb="3rem" w="25rem">
+                            <Flex alignItems="center" mb="1rem" gap={2}>
+                                <SmartPhone/>
+                                <Text>Phone</Text>
+                            </Flex>
+                            <Text>+234 708 954 7793</Text>
+                        </Box>
+                    </Link>
+                    <Link href='mailto:delightadediran21@gmail.com' target='_blank'>
+                        <Box mb="3rem" w="25rem">
+                            <Flex alignItems="center" mb="1rem" gap={2}>
+                                <Email/>
+                                <Text>Email</Text>
+                            </Flex>
+                            <Text>delightadediran21@gmail.com</Text>
+                        </Box>
+                    </Link>
+                    <Link href='https://maps.app.goo.gl/gHrgVXChjT9sLAYC6' target='_blank'>
+                        <Box mb="3rem" w="25rem">
+                            <Flex alignItems="center" mb="1rem" gap={2}>
+                                <Location/>
+                                <Text>Address</Text>
+                            </Flex>
+                            <Text>No. 28, Oisamoje Close, Ikola Ogunseye, Lagos</Text>
+                        </Box>
+                    </Link>
                 </Flex>
             </Box>
             <Box>
