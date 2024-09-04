@@ -82,7 +82,7 @@ const ContactUs = () => {
                 </Text>
                 <Flex flexWrap="wrap">
                     <Link href='tel:+2347089547793' target='_blank'>
-                        <Box mb="3rem" w="25rem">
+                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"}>
                             <Flex alignItems="center" mb="1rem" gap={2}>
                                 <SmartPhone/>
                                 <Text>Phone</Text>
@@ -91,7 +91,7 @@ const ContactUs = () => {
                         </Box>
                     </Link>
                     <Link href='mailto:delightadediran21@gmail.com' target='_blank'>
-                        <Box mb="3rem" w="25rem">
+                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"}>
                             <Flex alignItems="center" mb="1rem" gap={2}>
                                 <Email/>
                                 <Text>Email</Text>
@@ -100,7 +100,7 @@ const ContactUs = () => {
                         </Box>
                     </Link>
                     <Link href='https://maps.app.goo.gl/gHrgVXChjT9sLAYC6' target='_blank'>
-                        <Box mb="3rem" w="25rem">
+                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"}>
                             <Flex alignItems="center" mb="1rem" gap={2}>
                                 <Location/>
                                 <Text>Address</Text>
