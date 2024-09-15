@@ -137,6 +137,9 @@ const Home = () => {
             <TabPanels>
               <TabPanel>
                 <Homepage/>
+                <Resume/>
+                <Portfolio/>
+                <ContactUs/>
               </TabPanel>
               <TabPanel>
                 <Resume/>
