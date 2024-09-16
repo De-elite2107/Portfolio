@@ -208,9 +208,9 @@ const Resume = () => {
                     </Text>
                     <Flex justifyContent="space-between" flexWrap="wrap">
                         <Box pb="3rem" m="auto">
-                            <Box mb="1rem" className="eighty" textAlign="center" p="1rem" borderRadius="50%">
+                            <Box mb="1rem" className="ninety" textAlign="center" p="1rem" borderRadius="50%">
                                 <Box p="3rem" bg="#081f37" borderRadius="50%">
-                                    80%
+                                    90%
                                 </Box>
                             </Box>
                             <Text textAlign="center">WordPress</Text>
@@ -232,12 +232,20 @@ const Resume = () => {
                             <Text textAlign="center">Database / SQL</Text>
                         </Box>
                         <Box pb="3rem" m="auto">
+                            <Box mb="1rem" className="ninety-five" textAlign="center" p="1rem" borderRadius="50%">
+                                <Box p="3rem" bg="#081f37" borderRadius="50%">
+                                    95%    
+                                </Box>
+                            </Box>
+                            <Text textAlign="center">Python / Django</Text>
+                        </Box>
+                        <Box pb="3rem" m="auto">
                             <Box mb="1rem" className="ninety" textAlign="center" p="1rem" borderRadius="50%">
                                 <Box p="3rem" bg="#081f37" borderRadius="50%">
                                     90%    
                                 </Box>
                             </Box>
-                            <Text textAlign="center">Python / Django</Text>
+                            <Text textAlign="center">PHP / Laravel</Text>
                         </Box>
                         <Box pb="3rem" m="auto">
                             <Box mb="1rem" className="ninety-five" textAlign="center" p="1rem" borderRadius="50%">
