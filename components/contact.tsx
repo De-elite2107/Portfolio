@@ -7,6 +7,9 @@ import SmartPhone from '@/svgs/smartphone';
 import Email from '@/svgs/email';
 import Location from '@/svgs/location';
 import * as Yup from "yup";
+import WhatsappIcon from '@/svgs/whatsapp';
+import LinkedinIcon from '@/svgs/linkedin';
+import InstagramIcon from '@/svgs/instagram';
 
 const ContactUs = () => {
     const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
@@ -106,6 +109,30 @@ const ContactUs = () => {
                                 <Text>Address</Text>
                             </Flex>
                             <Text>No. 28, Oisamoje Close, Ikola Ogunseye, Lagos</Text>
+                        </Box>
+                    </Link>
+                    <Link href='https://wa.link/3bl1ku' target='_blank'>
+                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"}>
+                            <Flex alignItems="center" mb="1rem" gap={2}>
+                                <WhatsappIcon/>
+                                <Text>WhatsApp</Text>
+                            </Flex>
+                        </Box>
+                    </Link>
+                    <Link href='https://www.linkedin.com/in/delight-adediran-7151b022a/' target='_blank'>
+                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"}>
+                            <Flex alignItems="center" mb="1rem" gap={2}>
+                                <LinkedinIcon/>
+                                <Text>LinkedIn</Text>
+                            </Flex>
+                        </Box>
+                    </Link>
+                    <Link href='https://www.instagram.com/de_elite21/' target='_blank'>
+                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"}>
+                            <Flex alignItems="center" mb="1rem" gap={2}>
+                                <InstagramIcon/>
+                                <Text>Instagram</Text>
+                            </Flex>
                         </Box>
                     </Link>
                 </Flex>
