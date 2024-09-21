@@ -112,7 +112,7 @@ const ContactUs = () => {
                         </Box>
                     </Link>
                     <Link href='https://wa.link/3bl1ku' target='_blank'>
-                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"}>
+                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "15rem"}>
                             <Flex alignItems="center" mb="1rem" gap={2}>
                                 <WhatsappIcon/>
                                 <Text>WhatsApp</Text>
@@ -120,7 +120,7 @@ const ContactUs = () => {
                         </Box>
                     </Link>
                     <Link href='https://www.linkedin.com/in/delight-adediran-7151b022a/' target='_blank'>
-                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"}>
+                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "15rem"}>
                             <Flex alignItems="center" mb="1rem" gap={2}>
                                 <LinkedinIcon/>
                                 <Text>LinkedIn</Text>
@@ -128,7 +128,7 @@ const ContactUs = () => {
                         </Box>
                     </Link>
                     <Link href='https://www.instagram.com/de_elite21/' target='_blank'>
-                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"}>
+                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "15rem"}>
                             <Flex alignItems="center" mb="1rem" gap={2}>
                                 <InstagramIcon/>
                                 <Text>Instagram</Text>
