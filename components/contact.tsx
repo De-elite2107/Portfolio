@@ -85,7 +85,7 @@ const ContactUs = () => {
                 </Text>
                 <Flex flexWrap="wrap">
                     <Link href='tel:+2347089547793' target='_blank'>
-                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"} mr="6rem">
+                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"} mr={isLargerThan400? "" : "6rem"}>
                             <Flex alignItems="center" mb="1rem" gap={2}>
                                 <SmartPhone/>
                                 <Text>Phone</Text>

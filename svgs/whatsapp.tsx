@@ -17,7 +17,7 @@ const WhatsappIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     />
     <path
       d="M28 16C28 22.6274 22.6274 28 16 28C13.4722 28 11.1269 27.2184 9.19266 25.8837L5.09091 26.9091L6.16576 22.8784C4.80092 20.9307 4 18.5589 4 16C4 9.37258 9.37258 4 16 4C22.6274 4 28 9.37258 28 16Z"
-      fill="url(#paint0_linear_87_7264)"
+      fill="none"
     />
     <path
       fillRule="evenodd"
