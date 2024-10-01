@@ -45,7 +45,7 @@ const Portfolio = () => {
             </Text>
             <Flex flexWrap="wrap" gap={8}>
                 <Card
-                Video='./images/portfolio/portfolio.mp4'
+                Image='./images/portfolio/portfolio.png'
                 Name="De-elite's Portfolio"
                 Type="Portfolio"
                 Duration="3 days"
@@ -53,7 +53,7 @@ const Portfolio = () => {
                 Details="A platform built to display my niches, experience and skill level..."
                 />
                 <Card
-                Video='./images/portfolio/propertyco.mp4'
+                Image='./images/portfolio/propertyco.png'
                 Name="PropertyCo's Web App"
                 Type="Housing and Co."
                 Duration="1 month"
@@ -61,7 +61,7 @@ const Portfolio = () => {
                 Details={`A platform built for sales and rentage of exclusive houses ${<br/>} (Server carrying the resources rendered on the site is under maintenance)...`}
                 />
                 <Card
-                Video='./images/portfolio/adeptbloc.mp4'
+                Image='./images/portfolio/adeptbloc.png'
                 Name="AdeptBloc's Landing Page"
                 Type="Landing Page"
                 Duration="3 days"
