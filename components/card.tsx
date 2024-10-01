@@ -20,7 +20,7 @@ const Card = (props : Icard) => {
         h="11rem"
         >
             {props.Image && (<Img src={props.Image} alt='Card Img' w="100%" h="100%"/>)}
-            {props.Video && (<video src={props.Video} controls muted/>)}
+            {props.Video && (<video src={props.Video} muted/>)}
         </Box>
         <Flex gap={2} alignItems="start" mb="0.5rem">
             <Text color="#5fc9f3" w="5rem">Title:</Text>
