@@ -13,7 +13,7 @@ type Icard = {
 
 const Card = (props : Icard) => {
   return (
-    <Box color="white" mb="3rem" w="20rem">
+    <Box color="white" mb="3rem" w="23rem">
         <Box
         mb="1rem"
         w="20rem"

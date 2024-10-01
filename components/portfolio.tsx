@@ -45,7 +45,7 @@ const Portfolio = () => {
             </Text>
             <Flex flexWrap="wrap" gap={8}>
                 <Card
-                Video='./images/portfolio/portfolio_video.mp4'
+                Video='./images/portfolio/portfolio.mp4'
                 Name="De-elite's Portfolio"
                 Type="Portfolio"
                 Duration="3 days"
@@ -59,6 +59,14 @@ const Portfolio = () => {
                 Duration="1 month"
                 URL="https://www.propertyco.ng/"
                 Details={`A platform built for sales and rentage of exclusive houses ${<br/>} (Server carrying the resources rendered on the site is under maintenance)...`}
+                />
+                <Card
+                Video='./images/portfolio/adeptbloc.mp4'
+                Name="AdeptBloc's Landing Page"
+                Type="Landing Page"
+                Duration="3 days"
+                URL="https://adeptbloc.netlify.app/"
+                Details={`A platform where interns and tutors connect (Site is in progress!)...`}
                 />
             </Flex>
         </Box>
