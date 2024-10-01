@@ -261,6 +261,11 @@ ul{
   animation-duration: 1s;
   animation-name: fromRight;
 }
+
 img{
   pointer-events: none;
+}
+
+input:focus, textarea:focus{
+  border-color: white;
 }
