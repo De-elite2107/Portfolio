@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Box, Button, Flex, Img, Link, Text, useMediaQuery } from "@chakra-ui/react";
+import { Link as Anc } from 'react-scroll';
 import React from "react";
 import DownArrowIcon from "@/svgs/down-arrow";
 import FancyText from '@carefully-coded/react-text-gradient';
@@ -38,9 +39,11 @@ const Resume = () => {
                     Resume
                 </Text>
                 <Text color="white" textAlign="center" mb="5rem">My Resume...</Text>
-                <Link href="#resumes" className="mouse_btn" w="fit-content" display="block" m="auto">
-                    <DownArrowIcon width={50} height={50} fill="white"/>
-                </Link>
+                <Anc to="resumes" className="mouse_btn" smooth={true} spy={true}>
+                    <Box w="fit-content" m="auto">
+                        <DownArrowIcon width={50} height={50} fill="white"/>
+                    </Box>
+                </Anc>
             </Box>
             <Box id="resumes" p={isLargerThan1000 ? "4rem" : "0rem"}>
                 <Box color="white" mb="10rem">

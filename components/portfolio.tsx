@@ -1,8 +1,9 @@
 import DownArrowIcon from '@/svgs/down-arrow'
-import { Box, Text, Link, useMediaQuery, Flex } from '@chakra-ui/react'
+import { Box, Text, useMediaQuery, Flex } from '@chakra-ui/react'
 import FancyText from '@carefully-coded/react-text-gradient';
 import React from 'react'
 import Card from './card';
+import { Link } from 'react-scroll';
 
 const Portfolio = () => {
     const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
@@ -29,8 +30,10 @@ const Portfolio = () => {
             </Text>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <Text color="white" textAlign="center" mb="5rem">Recent works...</Text>
-            <Link href="#portfolios" className="mouse_btn" w="fit-content" display="block" m="auto">
-                <DownArrowIcon width={50} height={50} fill="white"/>
+            <Link to="portfolios" className="mouse_btn" smooth={true} spy={true}>
+                <Box w="fit-content" m="auto">
+                    <DownArrowIcon width={50} height={50} fill="white"/>
+                </Box>
             </Link>
         </Box>
         <Box id='portfolios' p={isLargerThan1000 ? "4rem" : "0rem"}>
@@ -45,6 +48,14 @@ const Portfolio = () => {
             </Text>
             <Flex flexWrap="wrap" gap={8}>
                 <Card
+                Image='./images/portfolio/adeptbloc.png'
+                Name="AdeptBloc's Landing Page"
+                Type="Landing Page"
+                Duration="3 days"
+                URL="https://adeptbloc.netlify.app/"
+                Details={`A platform where interns and tutors connect (Site is in progress!)...`}
+                />
+                <Card
                 Image='./images/portfolio/portfolio.png'
                 Name="De-elite's Portfolio"
                 Type="Portfolio"
@@ -58,15 +69,15 @@ const Portfolio = () => {
                 Type="Housing and Co."
                 Duration="1 month"
                 URL="https://www.propertyco.ng/"
-                Details={`A platform built for sales and rentage of exclusive houses ${<br/>} (Server carrying the resources rendered on the site is under maintenance)...`}
+                Details='A platform built for sales and rentage of exclusive houses; (Server carrying the resources rendered on the site is under maintenance)...'
                 />
                 <Card
-                Image='./images/portfolio/adeptbloc.png'
-                Name="AdeptBloc's Landing Page"
-                Type="Landing Page"
-                Duration="3 days"
-                URL="https://adeptbloc.netlify.app/"
-                Details={`A platform where interns and tutors connect (Site is in progress!)...`}
+                Image='./images/portfolio/remkay.png'
+                Name="Remkay's Web Page"
+                Type="School Webpage"
+                Duration="3 months"
+                URL="https://www.propertyco.ng/"
+                Details='Explore our vibrant school website, where academic excellence meets a nurturing community. Discover resources, events, and insights that empower students and parents alike to thrive in a dynamic learning environment...'
                 />
             </Flex>
         </Box>

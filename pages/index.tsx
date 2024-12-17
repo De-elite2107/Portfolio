@@ -63,7 +63,7 @@ const Home = () => {
                 justifyContent="space-between"
                 color="#5fc9f3"
               >
-                <Link to="home" spy={true} smooth={true}>
+                <Link activeClass="disabled" to="home" spy={true} smooth={true}>
                   <Text p="1rem" fontSize="24px" cursor="pointer">
                     <FancyText className="fromLeft" gradient={{
                       type: "linear",

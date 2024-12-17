@@ -1,6 +1,7 @@
 import React from 'react'
 import DownArrowIcon from '@/svgs/down-arrow';
 import { Box, Button, Flex, Input, Link, Text, Textarea, useMediaQuery } from '@chakra-ui/react'
+import { Link as Anc } from 'react-scroll';
 import FancyText from '@carefully-coded/react-text-gradient';
 import { ErrorMessage, Form, Formik } from "formik";
 import SmartPhone from '@/svgs/smartphone';
@@ -68,9 +69,11 @@ const ContactUs = () => {
             </Text>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <Text color="white" textAlign="center" mb="5rem">Let's Connect...</Text>
-            <Link href="#contacts" className="mouse_btn" w="fit-content" display="block" m="auto">
-                <DownArrowIcon width={50} height={50} fill="white"/>
-            </Link>
+            <Anc to="contacts" className="mouse_btn" smooth={true} spy={true}>
+                <Box w="fit-content" m="auto">
+                    <DownArrowIcon width={50} height={50} fill="white"/>
+                </Box>
+            </Anc>
         </Box>
         <Box id='contacts' p={isLargerThan1000 ? "4rem" : "0rem"}>
             <Box color="white">
