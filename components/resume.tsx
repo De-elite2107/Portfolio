@@ -18,7 +18,7 @@ const Resume = () => {
     const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
     const [isLargerThan400] = useMediaQuery("(min-width: 600px)");
     return (
-        <>
+        <Box id="resume">
             <Box
             m="auto"
             w="fit-content"
@@ -38,11 +38,11 @@ const Resume = () => {
                     Resume
                 </Text>
                 <Text color="white" textAlign="center" mb="5rem">My Resume...</Text>
-                <Link href="#resume" className="mouse_btn" w="fit-content" display="block" m="auto">
+                <Link href="#resumes" className="mouse_btn" w="fit-content" display="block" m="auto">
                     <DownArrowIcon width={50} height={50} fill="white"/>
                 </Link>
             </Box>
-            <Box id="resume" p={isLargerThan1000 ? "4rem" : "0rem"}>
+            <Box id="resumes" p={isLargerThan1000 ? "4rem" : "0rem"}>
                 <Box color="white" mb="10rem">
                     <Text fontSize="24px" mb="3rem">
                         <FancyText gradient={{
@@ -374,7 +374,7 @@ const Resume = () => {
                     </Flex>
                 </Box>
             </Box>
-        </>
+        </Box>
     );
 };
 

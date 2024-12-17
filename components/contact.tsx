@@ -47,7 +47,7 @@ const ContactUs = () => {
         resetForm();
     }
   return (
-    <>
+    <Box id='contact'>
         <Box
         m="auto"
         w="fit-content"
@@ -175,7 +175,7 @@ const ContactUs = () => {
                 </Formik>
             </Box>
         </Box>
-    </>
+    </Box>
     
   )
 }

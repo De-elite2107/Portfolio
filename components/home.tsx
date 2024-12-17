@@ -12,6 +12,7 @@ const Homepage = () => {
         p="150px 0"
         h="96vh"
         className="fromTop"
+        id="home"
       >
         <Text
           textAlign="center"

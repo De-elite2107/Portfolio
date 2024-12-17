@@ -269,3 +269,8 @@ img{
 input:focus, textarea:focus{
   border-color: white;
 }
+
+.active p{
+  border-bottom: 2px solid #FFFFFF;
+  color: #FFFFFF;
+}

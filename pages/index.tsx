@@ -20,6 +20,7 @@ import {
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
+import { Link } from 'react-scroll'
 import { RefObject, useEffect, useRef, useState } from "react";
 const Home = () => {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
@@ -50,7 +51,6 @@ const Home = () => {
     <>
       {stylesLoaded ? (
         <Box h="100%" bg="#081f37">
-          <Tabs transition="ease-in-out" onChange={(index) => setTabIndex(index)} index={tabIndex}>
             <Box
             position="fixed"
             top={0}
@@ -73,12 +73,28 @@ const Home = () => {
                   </FancyText>
                 </Text>
                 {isLargerThan1000 ? (
-                  <TabList className="fromRight">
-                    <Tab w="10rem" onClick={()=>{setTabIndex(0)}}>Home</Tab>
-                    <Tab w="10rem" onClick={()=>{setTabIndex(1)}}>Resume</Tab>
-                    <Tab w="10rem" onClick={()=>{setTabIndex(2)}}>Portfolio</Tab>
-                    <Tab w="10rem" onClick={()=>{setTabIndex(3)}}>Contact Us</Tab>
-                  </TabList>
+                <Flex w="35%" className="fromRight">
+                  <Link activeClass="active" to="home" spy={true} smooth={true}>
+                    <Box w="7rem" cursor="pointer">
+                      <Text w="fit-content">Home</Text>
+                    </Box>
+                  </Link>
+                  <Link activeClass="active" to="resume" spy={true} smooth={true}>
+                    <Box w="7rem" cursor="pointer">
+                      <Text w="fit-content">Resume</Text>
+                    </Box>
+                  </Link>
+                  <Link activeClass="active" to="portfolio" spy={true} smooth={true}>
+                    <Box w="7rem" cursor="pointer">
+                      <Text w="fit-content">Portfolio</Text>
+                    </Box>
+                  </Link>
+                  <Link activeClass="active" to="contact" spy={true} smooth={true}>
+                    <Box w="7rem" cursor="pointer">
+                      <Text w="fit-content">Contact Us</Text>
+                    </Box>
+                  </Link>
+                </Flex>
                 ) : (
                   <Box
                     ref={menuRef}
@@ -134,24 +150,10 @@ const Home = () => {
                 )}
               </Flex>
             </Box>
-            <TabPanels>
-              <TabPanel>
-                <Homepage/>
-                <Resume/>
-                <Portfolio/>
-                <ContactUs/>
-              </TabPanel>
-              <TabPanel>
-                <Resume/>
-              </TabPanel>
-              <TabPanel>
-                <Portfolio/>
-              </TabPanel>
-              <TabPanel>
-                <ContactUs/>
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
+            <Homepage/>
+            <Resume/>
+            <Portfolio/>
+            <ContactUs/>
           <Box position={isLargerThan400 ? "fixed" : "relative"} display="block" w="100%" zIndex={100} bottom={0} bg="#081f37">
             <Text className="fromBottom" color="#5fc9f3" p="1.5rem" fontSize="14px">&copy; 2024 De-elite Technologies. All rights reserved.</Text>
           </Box>

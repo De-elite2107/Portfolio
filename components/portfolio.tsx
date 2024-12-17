@@ -8,7 +8,7 @@ const Portfolio = () => {
     const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
     const [isLargerThan400] = useMediaQuery("(min-width: 600px)");
   return (
-    <>
+    <Box id='portfolio'>
         <Box
         m="auto"
         w="fit-content"
@@ -29,11 +29,11 @@ const Portfolio = () => {
             </Text>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <Text color="white" textAlign="center" mb="5rem">Recent works...</Text>
-            <Link href="#portfolio" className="mouse_btn" w="fit-content" display="block" m="auto">
+            <Link href="#portfolios" className="mouse_btn" w="fit-content" display="block" m="auto">
                 <DownArrowIcon width={50} height={50} fill="white"/>
             </Link>
         </Box>
-        <Box id='portfolio' p={isLargerThan1000 ? "4rem" : "0rem"}>
+        <Box id='portfolios' p={isLargerThan1000 ? "4rem" : "0rem"}>
             <Text fontSize="24px" mb="3rem">
                 <FancyText gradient={{
                 type: "linear",
@@ -70,7 +70,7 @@ const Portfolio = () => {
                 />
             </Flex>
         </Box>
-    </>
+    </Box>
   )
 }
 export default Portfolio
