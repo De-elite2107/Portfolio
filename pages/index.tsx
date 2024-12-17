@@ -63,15 +63,17 @@ const Home = () => {
                 justifyContent="space-between"
                 color="#5fc9f3"
               >
-                <Text p="1rem" fontSize="24px">
-                  <FancyText className="fromLeft" gradient={{
-                    type: "linear",
-                    from: "#1e549f",
-                    to: "#5fc9f3",
-                  }}>
-                    De-elite Technologies
-                  </FancyText>
-                </Text>
+                <Link to="home" spy={true} smooth={true}>
+                  <Text p="1rem" fontSize="24px" cursor="pointer">
+                    <FancyText className="fromLeft" gradient={{
+                      type: "linear",
+                      from: "#1e549f",
+                      to: "#5fc9f3",
+                    }}>
+                      De-elite Technologies
+                    </FancyText>
+                  </Text>
+                </Link>
                 {isLargerThan1000 ? (
                 <Flex w="35%" className="fromRight">
                   <Link activeClass="active" to="home" spy={true} smooth={true}>
