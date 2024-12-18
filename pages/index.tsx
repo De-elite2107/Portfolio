@@ -106,56 +106,62 @@ const Home = () => {
                     <Menu>
                       <MenuButton _hover={{"bg" : "none"}} _active={{"bg" : "none"}} bg="none" as={IconButton} icon={<Hamburger toggled={isOpen} toggle={setOpen} color="#2e79ba"/>}/>
                       <MenuList lineHeight={10} className="menulist" bg="#081f37" border="none" minW="100vw" borderRadius="none">
-                        <MenuItem
-                        justifyContent="center"
-                        onClick={() => {
-                          setOpen(false)
-                          setTabIndex(0)
-                        }} 
-                        bg={tabIndex === 0 ? "#1e549f" : ""}
-                        >
-                          Home
-                        </MenuItem>
-                        <MenuItem
-                        justifyContent="center"
-                        onClick={() => {
-                          setOpen(false)
-                          setTabIndex(1)
-                        }} 
-                        bg={tabIndex === 1 ? "#1e549f" : ""}
-                        >
-                          Resume
-                        </MenuItem>
-                        <MenuItem
-                        justifyContent="center"
-                        onClick={() => {
-                          setOpen(false)
-                          setTabIndex(2)
-                        }} 
-                        bg={tabIndex === 2 ? "#1e549f" : ""}
-                        >
-                          Portfolio
-                        </MenuItem>
-                        <MenuItem
-                        justifyContent="center"
-                        onClick={() => {
-                          setOpen(false)
-                          setTabIndex(3)
-                        }} 
-                        bg={tabIndex === 3 ? "#1e549f" : ""}
-                        >
-                          Contact Us
-                        </MenuItem>
+                        <Link activeClass="active" to="home" spy={true} smooth={true}>
+                          <MenuItem
+                          justifyContent="center"
+                          onClick={() => {
+                            setOpen(false)
+                          }}
+                          bg=""
+                          >
+                            Home
+                          </MenuItem>
+                        </Link>
+                        <Link activeClass="active" to="resume" spy={true} smooth={true}>
+                          <MenuItem
+                          justifyContent="center"
+                          onClick={() => {
+                            setOpen(false)
+                          }}
+                          bg=""
+                          >
+                            Resume
+                          </MenuItem>
+                        </Link>
+                        <Link activeClass="active" to="portfolio" spy={true} smooth={true}>
+                          <MenuItem
+                          justifyContent="center"
+                          onClick={() => {
+                            setOpen(false)
+                          }}
+                          bg=""
+                          >
+                            Portfolio
+                          </MenuItem>
+                        </Link>
+                        <Link activeClass="active" to="contact" spy={true} smooth={true}>
+                          <MenuItem
+                          justifyContent="center"
+                          onClick={() => {
+                            setOpen(false)
+                          }}
+                          bg=""
+                          >
+                            Contact Us
+                          </MenuItem>
+                        </Link>
                       </MenuList>
                     </Menu>
                   </Box>
                 )}
               </Flex>
             </Box>
-            <Homepage/>
-            <Resume/>
-            <Portfolio/>
-            <ContactUs/>
+            <Box p="0rem 2rem 0rem 2rem">
+              <Homepage/>
+              <Resume/>
+              <Portfolio/>
+              <ContactUs/>
+            </Box>
           <Box position={isLargerThan400 ? "fixed" : "relative"} display="block" w="100%" zIndex={100} bottom={0} bg="#081f37">
             <Text className="fromBottom" color="#5fc9f3" p="1.5rem" fontSize="14px">&copy; 2024 De-elite Technologies. All rights reserved.</Text>
           </Box>
