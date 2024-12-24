@@ -36,7 +36,7 @@ const Card = (props : Icard) => {
         </Flex>
         <Flex gap={2} alignItems="start">
             <Text color="#5fc9f3" w="5rem">URL:</Text>
-            <Text><Link href={props.URL} target='_blank'>{props.URL}</Link></Text>
+            <Text><Link href={props.URL} target='_blank'>Link to Site</Link></Text>
         </Flex>
         <Flex alignItems="start" flexWrap="wrap" gap={2} mb="0.5rem">
             <Text color="#5fc9f3" w="5rem">Details:</Text>
