@@ -48,7 +48,7 @@ const Portfolio = () => {
             </Text>
             <Flex flexWrap="wrap" gap={8}>
                 <Card
-                Image='./images/portfolio/adeptbloc.png'
+                Image='./images/portfolio/cmsserver.png'
                 Name="Church Management System"
                 Type="API"
                 Duration="2 days"
