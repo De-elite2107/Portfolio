@@ -63,14 +63,14 @@ const Portfolio = () => {
                 URL="https://cmsserver.up.railway.app/"
                 Details='Our Church Management System API offers seamless integration for managing congregational data, events, and communications, enhancing community engagement and operational efficiency. Designed for flexibility and scalability, it empowers churches to streamline their administrative tasks and foster stronger connections within their communities...'
                 />
-                <Card
+                {/* <Card
                 Image='./images/portfolio/crms.png'
                 Name="Course Resources Management System"
                 Type="LMS"
                 Duration="3 weeks"
                 URL="https://crmsys.netlify.app/"
                 Details='Our Course Resource Management System streamlines the organization and accessibility of educational materials, enhancing the learning experience for students and educators alike. With intuitive navigation and robust features, it empowers users to efficiently manage resources and collaborate effectively...'
-                />
+                /> */}
                 <Card
                 Image='./images/portfolio/adeptbloc.png'
                 Name="AdeptBloc's Landing Page"
