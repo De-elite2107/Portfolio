@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Box, Button, Flex, Img, Link, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Img, Link, Text, useMediaQuery } from "@chakra-ui/react";
 import { Link as Anc } from 'react-scroll';
 import React from "react";
 import DownArrowIcon from "@/svgs/down-arrow";
@@ -310,7 +310,7 @@ const Resume = () => {
                             MY SERVICES
                         </FancyText>
                     </Text>
-                    <Flex flexWrap="wrap">
+                    <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)",lg: "repeat(3, 1fr)" }} gap={3}>
                         <Box mr={isLargerThan400 ? "5rem" : ""} w={isLargerThan400 ? "20rem" : "100%"} mb="3rem">
                             <Flex alignItems="center" gap={2} mb="1rem">
                                 <Html5/>
@@ -374,7 +374,7 @@ const Resume = () => {
                             </Flex>
                             <Text lineHeight={8}>We integrate developments and operations to streamline deployment processes, improve application reliability, and automate workflows.</Text>
                         </Box>
-                    </Flex>
+                    </Grid>
                 </Box>
             </Box>
         </Box>
