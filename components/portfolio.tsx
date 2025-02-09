@@ -1,5 +1,5 @@
 import DownArrowIcon from '@/svgs/down-arrow'
-import { Box, Text, useMediaQuery, Flex } from '@chakra-ui/react'
+import { Box, Text, useMediaQuery, Flex, Grid } from '@chakra-ui/react'
 import FancyText from '@carefully-coded/react-text-gradient';
 import React from 'react'
 import Card from './card';
@@ -46,7 +46,7 @@ const Portfolio = () => {
                     Recent Works
                 </FancyText>
             </Text>
-            <Flex flexWrap="wrap" gap={8}>
+            <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)",lg: "repeat(3, 1fr)" }} gap={3}>
                 <Card
                 Image='./images/portfolio/HG.png'
                 Name="Hightower Global Church (Webapp + Management System)"
@@ -103,7 +103,7 @@ const Portfolio = () => {
                 URL="https://remkayschools.pythonanywhere.com"
                 Details='Explore our vibrant school website, where academic excellence meets a nurturing community. Discover resources, events, and insights that empower students and parents alike to thrive in a dynamic learning environment...'
                 />
-            </Flex>
+            </Grid>
         </Box>
     </Box>
   )
