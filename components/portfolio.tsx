@@ -52,7 +52,7 @@ const Portfolio = () => {
                 Name="Hightower Global Church (Webapp + Management System)"
                 Type="Webapp + API"
                 Duration="2 weeks"
-                URL="https://hightowerglobal.netlify.app/"
+                URL="https://hightowerglobal.org/"
                 Details="Our Church Management System is a WebApp + API designed to streamline church operations, from managing congregational data and events to enhancing communication. Scalable and user-friendly, it automates tasks like attendance tracking, donations, and announcements, fostering stronger community engagement."
                 />
                 <Card
