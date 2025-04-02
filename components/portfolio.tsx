@@ -60,7 +60,7 @@ const Portfolio = () => {
                 Name="Church Management System"
                 Type="API"
                 Duration="2 days"
-                URL="https://cmsserver.up.railway.app/"
+                URL="https://hightowerglobal.up.railway.app/api/"
                 Details='Our Church Management System API offers seamless integration for managing congregational data, events, and communications, enhancing community engagement and operational efficiency. Designed for flexibility and scalability, it empowers churches to streamline their administrative tasks and foster stronger connections within their communities...'
                 />
                 {/* <Card
