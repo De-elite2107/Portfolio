@@ -86,7 +86,7 @@ const Resume = () => {
                                 <Box lineHeight={10}>
                                     <Flex>
                                         <Text color="#5fc9f3">Age:</Text>
-                                        <Text>&nbsp;19 Years</Text>
+                                        <Text>&nbsp;NaN Years</Text>
                                     </Flex>
                                     <Flex>
                                         <Text color="#5fc9f3">Residence:</Text>
