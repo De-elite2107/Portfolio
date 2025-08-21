@@ -302,7 +302,7 @@ const Resume = () => {
                                 <li>Mobile Application Technologies (Flutter, React Native)</li>
                                 <li>Responsive Design</li>
                                 <li>Testing and Debugging</li>
-                                <li>Basic Networking</li>
+                                <li>State Management(Redux)</li>
                                 <li>DevOps Practices</li>
                             </ul>
                         </Box>
