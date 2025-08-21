@@ -92,7 +92,7 @@ const Portfolio = () => {
                 Name="PropertyCo's Web App"
                 Type="Housing and Co."
                 Duration="1 month"
-                URL="https://www.propertyco.ng/"
+                URL="https://propertyco.ng/"
                 Details='A platform built for sales and rentage of exclusive houses; (Server carrying the resources rendered on the site is under maintenance)...'
                 />
                 <Card
