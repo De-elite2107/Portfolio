@@ -558,7 +558,6 @@ const Resume = () => {
             <Box
               lineHeight={10}
               w={isLargerThan400 ? "20rem" : "100%"}
-              mr={isLargerThan400 ? "5rem" : ""}
             >
               <ul>
                 <li>Mobile Application Technologies (Flutter, React Native)</li>
