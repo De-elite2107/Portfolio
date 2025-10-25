@@ -1,6 +1,6 @@
 import React from 'react'
 import DownArrowIcon from '@/svgs/down-arrow';
-import { Box, Button, Flex, Input, Link, Text, Textarea, useMediaQuery } from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, GridItem, HStack, Input, Link, Text, Textarea, useMediaQuery } from '@chakra-ui/react'
 import { Link as Anc } from 'react-scroll';
 import FancyText from '@carefully-coded/react-text-gradient';
 import { ErrorMessage, Form, Formik } from "formik";
@@ -86,59 +86,67 @@ const ContactUs = () => {
                         CONTACTS
                     </FancyText>
                 </Text>
-                <Flex flexWrap="wrap">
-                    <Link href='tel:+2347089547793' target='_blank'>
-                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"} mr={isLargerThan400? "" : "6rem"}>
-                            <Flex alignItems="center" mb="1rem" gap={2}>
-                                <SmartPhone/>
-                                <Text>Phone</Text>
-                            </Flex>
-                            <Text>+234 708 954 7793</Text>
-                        </Box>
-                    </Link>
-                    <Link href='mailto:delightadediran21@gmail.com' target='_blank'>
-                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"}>
-                            <Flex alignItems="center" mb="1rem" gap={2}>
-                                <Email/>
-                                <Text>Email</Text>
-                            </Flex>
-                            <Text>delightadediran21@gmail.com</Text>
-                        </Box>
-                    </Link>
-                    <Link href='https://maps.app.goo.gl/gHrgVXChjT9sLAYC6' target='_blank'>
-                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "100%"}>
-                            <Flex alignItems="center" mb="1rem" gap={2}>
-                                <Location/>
-                                <Text>Address</Text>
-                            </Flex>
-                            <Text>No. 28, Oisamoje Close, Ikola Ogunseye, Lagos</Text>
-                        </Box>
-                    </Link>
-                    <Link href='https://wa.link/3bl1ku' target='_blank'>
-                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "15rem"}>
-                            <Flex alignItems="center" mb="1rem" gap={2}>
-                                <WhatsappIcon/>
-                                <Text>WhatsApp</Text>
-                            </Flex>
-                        </Box>
-                    </Link>
-                    <Link href='https://www.linkedin.com/in/delight-adediran-7151b022a/' target='_blank'>
-                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "15rem"}>
-                            <Flex alignItems="center" mb="1rem" gap={2}>
-                                <LinkedinIcon/>
-                                <Text>LinkedIn</Text>
-                            </Flex>
-                        </Box>
-                    </Link>
-                    <Link href='https://www.instagram.com/de_elite21/' target='_blank'>
-                        <Box mb="3rem" w={isLargerThan400 ? "25rem" : "15rem"}>
-                            <Flex alignItems="center" mb="1rem" gap={2}>
-                                <InstagramIcon/>
-                                <Text>Instagram</Text>
-                            </Flex>
-                        </Box>
-                    </Link>
-                </Flex>
+                <Grid templateColumns={{base: "repeat(1, 1fr)", sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)", xl: "repeat(3, 1fr)"}} gap={10}>
+                    <GridItem>
+                        <Link href='tel:+2347089547793' target='_blank'>
+                            <Box>
+                                <HStack mb="1rem" gap={2}>
+                                    <SmartPhone/>
+                                    <Text>Phone</Text>
+                                </HStack>
+                                <Text>+234 708 954 7793</Text>
+                            </Box>
+                        </Link>
+                    </GridItem>
+                    <GridItem>
+                        <Link href='mailto:delightadediran21@gmail.com' target='_blank'>
+                            <Box>
+                                <HStack mb="1rem" gap={2}>
+                                    <Email/>
+                                    <Text>Email</Text>
+                                </HStack>
+                                <Text>delightadediran21@gmail.com</Text>
+                            </Box>
+                        </Link>
+                    </GridItem>
+                    <GridItem>
+                        <Link href='https://maps.app.goo.gl/gHrgVXChjT9sLAYC6' target='_blank'>
+                            <Box>
+                                <HStack mb="1rem" gap={2}>
+                                    <Location/>
+                                    <Text>Address</Text>
+                                </HStack>
+                                <Text>No. 28, Oisamoje Close, Ikola Ogunseye, Lagos</Text>
+                            </Box>
+                        </Link>
+                    </GridItem>
+                    <GridItem>
+                        <Link href='https://wa.link/3bl1ku' target='_blank'>
+                                <HStack mb="1rem" gap={2}>
+                                    <WhatsappIcon/>
+                                    <Text>WhatsApp</Text>
+                                </HStack>
+                        </Link>
+                    </GridItem>
+                    <GridItem>
+                        <Link href='https://www.linkedin.com/in/delight-adediran-7151b022a/' target='_blank'>
+                                <HStack mb="1rem" gap={2}>
+                                    <LinkedinIcon/>
+                                    <Text>LinkedIn</Text>
+                                </HStack>
+                        </Link>
+                    </GridItem>
+                    <GridItem>
+                        <Link href='https://www.instagram.com/de_elite21/' target='_blank'>
+                            <Box mb="3rem">
+                                <HStack mb="1rem" gap={2}>
+                                    <InstagramIcon/>
+                                    <Text>Instagram</Text>
+                                </HStack>
+                            </Box>
+                        </Link>
+                    </GridItem>
+                </Grid>
             </Box>
             <Box>
                 <Formik
