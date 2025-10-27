@@ -48,6 +48,22 @@ const Portfolio = () => {
             </Text>
             <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)",lg: "repeat(3, 1fr)" }} gap={3}>
                 <Card
+                Image='./images/portfolio/SB.png'
+                Name="StudyBuddy Edutech Solutions (A ongoing software for students to collaborte and learn)"
+                Type="Webapp"
+                Duration="2 weeks"
+                URL="https://usestudybuddy.org/homepage"
+                Details="Smarter studying, real StudyBuddy is a digital-first learning platform that offers summarized learning materials and a buddy that keeps you motivated while studying and your Buddy—right in your pocket."
+                />
+                <Card
+                Image='./images/portfolio/DH.png'
+                Name="Delta Health"
+                Type="Webapp"
+                Duration="2 weeks"
+                URL="https://deltahealth.usestudybuddy.org/"
+                Details="This platform helps residents in Delta State access verified health information, find clinics nearby, and book appointments—all from their phone. (A final year student project I built from scratch. A complete system)"
+                />
+                <Card
                 Image='./images/portfolio/HG.png'
                 Name="Hightower Global Church (Webapp + Management System)"
                 Type="Webapp + API"
