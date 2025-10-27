@@ -53,7 +53,7 @@ const Portfolio = () => {
                 Type="Webapp"
                 Duration="2 weeks"
                 URL="https://usestudybuddy.org/homepage"
-                Details="Smarter studying, real StudyBuddy is a digital-first learning platform that offers summarized learning materials and a buddy that keeps you motivated while studying and your Buddy—right in your pocket."
+                Details="Smarter studying, real StudyBuddy is a digital-first learning platform that offers summarized learning materials and a buddy that keeps you motivated while studying and your Buddy—right in your pocket..."
                 />
                 <Card
                 Image='./images/portfolio/DH.png'
@@ -61,7 +61,7 @@ const Portfolio = () => {
                 Type="Webapp"
                 Duration="2 weeks"
                 URL="https://deltahealth.usestudybuddy.org/"
-                Details="This platform helps residents in Delta State access verified health information, find clinics nearby, and book appointments—all from their phone. (A final year student project I built from scratch. A complete system)"
+                Details="This platform helps residents in Delta State access verified health information, find clinics nearby, and book appointments—all from their phone. (A final year student project I built from scratch. A complete system)..."
                 />
                 <Card
                 Image='./images/portfolio/HG.png'
@@ -69,7 +69,7 @@ const Portfolio = () => {
                 Type="Webapp + API"
                 Duration="2 weeks"
                 URL="https://hightowerglobal.org/"
-                Details="Our Church Management System is a WebApp + API designed to streamline church operations, from managing congregational data and events to enhancing communication. Scalable and user-friendly, it automates tasks like attendance tracking, donations, and announcements, fostering stronger community engagement."
+                Details="Our Church Management System is a WebApp + API designed to streamline church operations, from managing congregational data and events to enhancing communication. Scalable and user-friendly, it automates tasks like attendance tracking, donations, and announcements, fostering stronger community engagement..."
                 />
                 <Card
                 Image='./images/portfolio/cmsserver.png'
