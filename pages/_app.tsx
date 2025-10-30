@@ -9,7 +9,7 @@ import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    const apiKey = 'YOUR_API_KEY';
+    const apiKey = 'NqBVVemHeec5UEpwXwlPZuNXownfCEPw';
     const endpoint = 'http://localhost:8000/api/monitor/activity';
 
     fetch(endpoint, {
