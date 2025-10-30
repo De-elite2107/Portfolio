@@ -5,8 +5,30 @@ import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    const apiKey = 'YOUR_API_KEY';
+    const endpoint = 'http://localhost:8000/api/monitor/activity';
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-API-Key': apiKey,
+      },
+      body: JSON.stringify({
+        ip_address: 'CLIENT_IP', // ideally resolved server-side
+        method: 'GET',
+        endpoint: window.location.pathname,
+        response_code: 200,
+        user_agent: navigator.userAgent,
+        response_time: performance.now(),
+      }),
+    }).catch((err) => console.error('ThreatGuard:', err));
+  }, []);
+
   return(
     <CacheProvider>
       <ChakraProvider>
