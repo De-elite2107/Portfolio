@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
         'X-API-Key': apiKey,
       },
       body: JSON.stringify({
-        ip_address: 'CLIENT_IP', // ideally resolved server-side
+        ip_address: '10.25.87.15', // ideally resolved server-side
         method: 'GET',
         endpoint: window.location.pathname,
         response_code: 200,
