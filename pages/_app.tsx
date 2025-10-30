@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
         user_agent: navigator.userAgent,
         response_time: performance.now(),
       }),
-    }).catch((err) => console.error('ThreatGuard:', err));
+    }).catch((err) => console.error('Sentinel:', err));
   }, []);
 
   return(
