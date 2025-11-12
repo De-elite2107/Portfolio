@@ -111,14 +111,14 @@ const Portfolio = () => {
                 URL="https://propertyco.ng/"
                 Details='A platform built for sales and rentage of exclusive houses; (Server carrying the resources rendered on the site is under maintenance)...'
                 />
-                {/* <Card
+                <Card
                 Image='./images/portfolio/remkay.png'
                 Name="Remkay's Web Page"
                 Type="School Webpage"
                 Duration="3 months"
                 URL="https://remkayschools.pythonanywhere.com"
                 Details='Explore our vibrant school website, where academic excellence meets a nurturing community. Discover resources, events, and insights that empower students and parents alike to thrive in a dynamic learning environment...'
-                /> */}
+                />
             </Grid>
         </Box>
     </Box>
