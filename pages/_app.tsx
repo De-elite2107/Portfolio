@@ -8,66 +8,66 @@ import Head from "next/head";
 import { Router } from "next/router";
 import { useEffect } from "react";
 
-function sendToServer(payload: any) {
-  // Prefer sendBeacon (non-blocking) for unload; fallback to fetch
-  const url = '/api/monitor' // Next.js server-side proxy
-  const body = JSON.stringify(payload)
+// function sendToServer(payload: any) {
+//   // Prefer sendBeacon (non-blocking) for unload; fallback to fetch
+//   const url = '/api/monitor' // Next.js server-side proxy
+//   const body = JSON.stringify(payload)
 
-  if (navigator.sendBeacon) {
-    const blob = new Blob([body], { type: 'application/json' })
-    navigator.sendBeacon(url, blob)
-    return
-  }
+//   if (navigator.sendBeacon) {
+//     const blob = new Blob([body], { type: 'application/json' })
+//     navigator.sendBeacon(url, blob)
+//     return
+//   }
 
-  fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body,
-    keepalive: true, // helps with background delivery
-  }).catch((e) => {
-    // optional: add a small retry/backoff or queue to localStorage
-    console.error('Monitor client error:', e)
-  })
-}
+//   fetch(url, {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body,
+//     keepalive: true, // helps with background delivery
+//   }).catch((e) => {
+//     // optional: add a small retry/backoff or queue to localStorage
+//     console.error('Monitor client error:', e)
+//   })
+// }
 
-function useMonitor() {
-  useEffect(() => {
-    const logPage = (path?: string) => {
-      const payload = {
-        method: 'GET',
-        endpoint: path || window.location.pathname,
-        response_code: 200,
-        user_agent: navigator.userAgent,
-        response_time: performance.now(),
-        referrer: document.referrer || null,
-        timestamp: new Date().toISOString(),
-      }
-      sendToServer(payload)
-    }
+// function useMonitor() {
+//   useEffect(() => {
+//     const logPage = (path?: string) => {
+//       const payload = {
+//         method: 'GET',
+//         endpoint: path || window.location.pathname,
+//         response_code: 200,
+//         user_agent: navigator.userAgent,
+//         response_time: performance.now(),
+//         referrer: document.referrer || null,
+//         timestamp: new Date().toISOString(),
+//       }
+//       sendToServer(payload)
+//     }
 
-    // initial page load
-    logPage(window.location.pathname)
+//     // initial page load
+//     logPage(window.location.pathname)
 
-    // track client-side route changes (Next.js)
-    const onRouteChange = (url: string) => logPage(url)
-    Router.events.on('routeChangeComplete', onRouteChange)
+//     // track client-side route changes (Next.js)
+//     const onRouteChange = (url: string) => logPage(url)
+//     Router.events.on('routeChangeComplete', onRouteChange)
 
-    // also send on unload (close / refresh)
-    const onBeforeUnload = () => {
-      logPage(window.location.pathname)
-    }
-    window.addEventListener('beforeunload', onBeforeUnload)
+//     // also send on unload (close / refresh)
+//     const onBeforeUnload = () => {
+//       logPage(window.location.pathname)
+//     }
+//     window.addEventListener('beforeunload', onBeforeUnload)
 
-    return () => {
-      Router.events.off('routeChangeComplete', onRouteChange)
-      window.removeEventListener('beforeunload', onBeforeUnload)
-    }
-  }, [])
-}
+//     return () => {
+//       Router.events.off('routeChangeComplete', onRouteChange)
+//       window.removeEventListener('beforeunload', onBeforeUnload)
+//     }
+//   }, [])
+// }
 
 
 export default function App({ Component, pageProps }: AppProps) {
-  useMonitor()
+  // useMonitor()
   return(
     <CacheProvider>
       <ChakraProvider>

@@ -116,7 +116,7 @@ const ContactUs = () => {
                                     <Location/>
                                     <Text>Address</Text>
                                 </HStack>
-                                <Text>No. 28, Oisamoje Close, Ikola Ogunseye, Lagos</Text>
+                                <Text>Ikola Ogunseye, Lagos</Text>
                             </Box>
                         </Link>
                     </GridItem>
