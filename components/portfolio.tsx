@@ -48,8 +48,16 @@ const Portfolio = () => {
             </Text>
             <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)",lg: "repeat(3, 1fr)" }} gap={3}>
                 <Card
+                Image='./images/portfolio/GIRO.png'
+                Name="Advanced Multi-Tenant iGaming UI Framework"
+                Type="Webapp"
+                Duration="∞ (Ongoing)"
+                URL="https://giro.wdang.vip/"
+                Details="Developed a high-performance multi-tenant iGaming platform using Nuxt 4 and Tailwind CSS. Built a Zod-validated API layer for real-time payments (PIX) and game management, featuring a dynamic 9-theme engine for instant white-label deployment..."
+                />
+                <Card
                 Image='./images/portfolio/SB.png'
-                Name="StudyBuddy Edutech Solutions (A ongoing software for students to collaborte and learn)"
+                Name="StudyBuddy Edutech Solutions (An ongoing software for students to collaborate and learn)"
                 Type="Webapp"
                 Duration="2 weeks"
                 URL="https://usestudybuddy.org/homepage"

@@ -461,13 +461,27 @@ const Resume = () => {
             <Box pb="3rem" m="auto">
               <Box
                 mb="1rem"
-                className="ninety"
+                className="ninety-eight"
                 textAlign="center"
                 p="1rem"
                 borderRadius="50%"
               >
                 <Box p="3rem" bg="#081f37" borderRadius="50%">
-                  90%
+                  98%
+                </Box>
+              </Box>
+              <Text textAlign="center">Next / Nuxt</Text>
+            </Box>
+            <Box pb="3rem" m="auto">
+              <Box
+                mb="1rem"
+                className="ninety-five"
+                textAlign="center"
+                p="1rem"
+                borderRadius="50%"
+              >
+                <Box p="3rem" bg="#081f37" borderRadius="50%">
+                  95%
                 </Box>
               </Box>
               <Text textAlign="center">Database / SQL</Text>
@@ -489,13 +503,13 @@ const Resume = () => {
             <Box pb="3rem" m="auto">
               <Box
                 mb="1rem"
-                className="ninety"
+                className="ninety-eight"
                 textAlign="center"
                 p="1rem"
                 borderRadius="50%"
               >
                 <Box p="3rem" bg="#081f37" borderRadius="50%">
-                  90%
+                  98%
                 </Box>
               </Box>
               <Text textAlign="center">PHP / Laravel</Text>
@@ -503,13 +517,13 @@ const Resume = () => {
             <Box pb="3rem" m="auto">
               <Box
                 mb="1rem"
-                className="ninety-five"
+                className="ninety-eight"
                 textAlign="center"
                 p="1rem"
                 borderRadius="50%"
               >
                 <Box p="3rem" bg="#081f37" borderRadius="50%">
-                  95%
+                  98%
                 </Box>
               </Box>
               <Text textAlign="center">HTML / CSS</Text>
