@@ -2,7 +2,7 @@ import React from 'react'
 import DownArrowIcon from '@/svgs/down-arrow';
 import { Box, Button, Flex, Grid, GridItem, HStack, Input, Link, Text, Textarea, useMediaQuery } from '@chakra-ui/react'
 import { Link as Anc } from 'react-scroll';
-import FancyText from '@carefully-coded/react-text-gradient';
+import FancyText from '@/components/fancy-text';
 import { ErrorMessage, Form, Formik } from "formik";
 import SmartPhone from '@/svgs/smartphone';
 import Email from '@/svgs/email';

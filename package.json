@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@carefully-coded/react-text-gradient": "^1.0.6",
     "@chakra-ui/next-js": "^2.2.0",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.3",

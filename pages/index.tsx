@@ -2,7 +2,7 @@ import ContactUs from "@/components/contact";
 import Homepage from "@/components/home";
 import Portfolio from "@/components/portfolio";
 import Resume from "@/components/resume";
-import FancyText from '@carefully-coded/react-text-gradient';
+import FancyText from '@/components/fancy-text';
 import Hamburger from 'hamburger-react';
 import {
   Box,

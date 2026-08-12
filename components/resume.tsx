@@ -12,7 +12,7 @@ import {
 import { Link as Anc } from "react-scroll";
 import React from "react";
 import DownArrowIcon from "@/svgs/down-arrow";
-import FancyText from "@carefully-coded/react-text-gradient";
+import FancyText from "@/components/fancy-text";
 import Checkmark from "@/svgs/checkmark";
 import Html5 from "@/svgs/html";
 import Terminal from "@/svgs/terminal";

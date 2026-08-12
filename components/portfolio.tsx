@@ -1,6 +1,6 @@
 import DownArrowIcon from '@/svgs/down-arrow'
 import { Box, Text, useMediaQuery, Flex, Grid } from '@chakra-ui/react'
-import FancyText from '@carefully-coded/react-text-gradient';
+import FancyText from '@/components/fancy-text';
 import React from 'react'
 import Card from './card';
 import { Link } from 'react-scroll';
