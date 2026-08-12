@@ -51,7 +51,7 @@ const Portfolio = () => {
                 Image='./images/portfolio/GIRO.png'
                 Name="Advanced Multi-Tenant iGaming UI Framework"
                 Type="Webapp"
-                Duration="∞ (Ongoing)"
+                Duration="4 weeks"
                 URL="https://giro.wdang.vip/"
                 Details="Developed a high-performance multi-tenant iGaming platform using Nuxt 4 and Tailwind CSS. Built a Zod-validated API layer for real-time payments (PIX) and game management, featuring a dynamic 9-theme engine for instant white-label deployment..."
                 />

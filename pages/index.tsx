@@ -163,7 +163,7 @@ const Home = () => {
               <ContactUs/>
             </Box>
           <Box position={isLargerThan400 ? "fixed" : "relative"} display="block" w="100%" zIndex={100} bottom={0} bg="#081f37">
-            <Text className="fromBottom" color="#5fc9f3" p="1.5rem" fontSize="14px">&copy; 2025 De-elite Technologies. All rights reserved.</Text>
+            <Text className="fromBottom" color="#5fc9f3" p="1.5rem" fontSize="14px">&copy; 2026 De-elite Technologies. All rights reserved.</Text>
           </Box>
         </Box>
       ) : (

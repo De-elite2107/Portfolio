@@ -102,14 +102,17 @@ const Resume = () => {
                 Docker, CI/CD pipelines, and cloud platforms like AWS. Beyond
                 development, I focus on DevSecOps principles, security
                 hardening, and real-time system monitoring to ensure reliable
-                performance and protection against vulnerabilities. My
-                problem-solving mindset, collaborative spirit, and passion for
-                clean architecture allow me to consistently deliver products
-                that meet both business and technical goals. I&apos;m deeply
-                committed to continuous learning and innovation, exploring
-                cutting-edge technologies across web, mobile, and robotics
-                engineering — always driven to build solutions that make an
-                impact.
+                performance and protection against vulnerabilities — a mindset
+                I&apos;ve now backed with formal academic grounding, having just
+                signed out with a B.Sc. in Cyber Security, which sharpened my
+                eye for threat modeling, secure system design, and risk-aware
+                engineering. My problem-solving mindset, collaborative spirit,
+                and passion for clean architecture allow me to consistently
+                deliver products that meet both business and technical goals.
+                I&apos;m deeply committed to continuous learning and innovation,
+                exploring cutting-edge technologies across web, mobile,
+                robotics, and cybersecurity — always driven to build solutions
+                that make an impact.
               </Text>
               <Flex
                 alignItems="center"
