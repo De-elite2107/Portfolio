@@ -133,10 +133,6 @@ const Resume = () => {
                 </Box>
                 <Box lineHeight={10}>
                   <Flex>
-                    <Text color="#5fc9f3">Age:</Text>
-                    <Text>&nbsp;NaN Years</Text>
-                  </Flex>
-                  <Flex>
                     <Text color="#5fc9f3">Residence:</Text>
                     <Text>&nbsp;Lagos</Text>
                   </Flex>
@@ -547,7 +543,8 @@ const Resume = () => {
           </Text>
           <Flex flexWrap="wrap" alignItems="start">
             <Box
-              lineHeight={10}
+              lineHeight={7}
+              sx={{ li: { mb: "0.75rem" } }}
               w={isLargerThan400 ? "20rem" : "100%"}
               mr={isLargerThan400 ? "5rem" : ""}
               mb="2rem"
@@ -573,7 +570,8 @@ const Resume = () => {
               </ul>
             </Box>
             <Box
-              lineHeight={10}
+              lineHeight={7}
+              sx={{ li: { mb: "0.75rem" } }}
               w={isLargerThan400 ? "20rem" : "100%"}
               mr={isLargerThan400 ? "5rem" : ""}
               mb="2rem"
@@ -597,7 +595,8 @@ const Resume = () => {
               </ul>
             </Box>
             <Box
-              lineHeight={10}
+              lineHeight={7}
+              sx={{ li: { mb: "0.75rem" } }}
               w={isLargerThan400 ? "20rem" : "100%"}
               mb="2rem"
             >
