@@ -78,7 +78,7 @@ const Resume = () => {
             >
               <Img
                 className="fromLeft"
-                src="./images/Delight.jpg"
+                src="./images/Delight.jpeg"
                 borderRadius="50%"
               />
             </Box>
@@ -550,38 +550,73 @@ const Resume = () => {
               lineHeight={10}
               w={isLargerThan400 ? "20rem" : "100%"}
               mr={isLargerThan400 ? "5rem" : ""}
+              mb="2rem"
             >
+              <Text color="#5fc9f3" fontWeight={800} mb="1rem">
+                Web & Back-End
+              </Text>
               <ul>
                 <li>Web Technologies</li>
-                <li>Front-End Technologies (HTML/CSS, Javascript)</li>
-                <li>Back-End Technologies (Python)</li>
-                <li>Database and Storage (SQL, PostgreSQL, AWS)</li>
-                <li>Server Creation and Configuration</li>
+                <li>Front-End Technologies (HTML/CSS, JavaScript, TypeScript)</li>
+                <li>Front-End frameworks (ReactJs, NextJs, Inertia.js, MUI)</li>
+                <li>Back-End Technologies (Python: Django, FastAPI, Flask; Node.js: Express)</li>
+                <li>RESTful APIs & API Documentation (OpenAPI)</li>
+                <li>Authentication & Authorization (Auth.js, Sanctum, JWT, SIWE, RBAC)</li>
+                <li>Payment Gateway Integration (Paystack)</li>
+                <li>Form Handling & Validation (Formik, Yup, React Hook Form, Zod)</li>
+                <li>State Management (Redux, Riverpod)</li>
+                <li>Responsive Design</li>
+                <li>Web Accessibility (WCAG)</li>
+                <li>3D Web Graphics (Three.js / React Three Fiber)</li>
+                <li>SVG, CSS Animation & Programmatic Graphics</li>
+                <li>Figma</li>
               </ul>
             </Box>
             <Box
               lineHeight={10}
               w={isLargerThan400 ? "20rem" : "100%"}
               mr={isLargerThan400 ? "5rem" : ""}
+              mb="2rem"
             >
+              <Text color="#5fc9f3" fontWeight={800} mb="1rem">
+                Data, AI & Security
+              </Text>
               <ul>
-                <li>Cloud Services</li>
-                <li>Front-End frameworks (ReactJs, NextJs)</li>
-                <li>RESTful APIs</li>
-                <li>Version Control (Git, Github)</li>
-                <li>Cyber-Security Basics</li>
+                <li>Database and Storage (SQL, PostgreSQL, MongoDB, Prisma, AWS)</li>
+                <li>Caching & Queues (Redis)</li>
+                <li>Data Visualisation & Tables (Chart.js, TanStack Table)</li>
+                <li>AI / LLM Integration & RAG</li>
+                <li>Machine Learning (scikit-learn, XGBoost, SHAP)</li>
+                <li>Deep Learning & NLP (PyTorch, BERT, spaCy, NLTK)</li>
+                <li>Blockchain / Web3 Integration (wallets, on-chain data)</li>
+                <li>Smart Contract Development (Solidity)</li>
+                <li>Cybersecurity (Intrusion Detection, Vulnerability Scanning, OWASP ZAP)</li>
+                <li>Testing and Debugging (Pest)</li>
+                <li>Clean Architecture</li>
+                <li>Real-time (SignalR)</li>
               </ul>
             </Box>
             <Box
               lineHeight={10}
               w={isLargerThan400 ? "20rem" : "100%"}
+              mb="2rem"
             >
+              <Text color="#5fc9f3" fontWeight={800} mb="1rem">
+                Mobile, DevOps & Hardware
+              </Text>
               <ul>
                 <li>Mobile Application Technologies (Flutter, React Native)</li>
-                <li>Responsive Design</li>
-                <li>Testing and Debugging</li>
-                <li>State Management(Redux)</li>
+                <li>Mobile Security (biometrics, secure storage)</li>
+                <li>Push Notifications (Firebase Cloud Messaging)</li>
+                <li>Telegram Bot Development (aiogram)</li>
+                <li>Server Creation and Configuration</li>
+                <li>Cloud Services</li>
                 <li>DevOps Practices</li>
+                <li>CI/CD (GitHub Actions)</li>
+                <li>Containerization (Docker, Docker Compose)</li>
+                <li>Background Jobs & Scheduling (Celery, Laravel Scheduler)</li>
+                <li>Version Control (Git, Github)</li>
+                <li>Embedded Systems & Robotics (Arduino, sensors, motor control)</li>
               </ul>
             </Box>
           </Flex>

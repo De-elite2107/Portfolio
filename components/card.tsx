@@ -6,7 +6,8 @@ type Icard = {
   Name: string;
   Type: string;
   Duration: string;
-  URL: string;
+  URL?: string;
+  LinkLabel?: string;
   Details: string;
 };
 
@@ -49,11 +50,15 @@ const Card = (props: Icard) => {
           </Text>
         </GridItem>
         <GridItem colSpan={{base: 1, md: 4}}>
-          <Text>
-            <Link textDecoration="underline" href={props.URL} target="_blank">
-              Link to Site
-            </Link>
-          </Text>
+          {props.URL ? (
+            <Text>
+              <Link textDecoration="underline" href={props.URL} target="_blank">
+                {props.LinkLabel ?? "Link to Site"}
+              </Link>
+            </Text>
+          ) : (
+            <Text color="grey">Link not available at the moment</Text>
+          )}
         </GridItem>
         <GridItem mb="0.5rem">
           <Text color="#5fc9f3" w="5rem">
