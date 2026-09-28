@@ -15,8 +15,10 @@ const Card = (props: Icard) => {
   return (
     <Box color="white" mb="3rem" w={{base: "100%" , md: "23rem"}}>
       <AspectRatio ratio={16/9} mb="0.5rem">
-        {props.Image && (
+        {props.Image ? (
           <Img src={props.Image} alt="Card Img" w="100%" h="100%" />
+        ) : (
+          <Box bg="#0d2a47" border="1px solid #1e549f" />
         )}
       </AspectRatio>
       <Grid gap={2} alignItems="start" templateColumns={{base: "repeat(1, 1fr)", md: "repeat(5, 1fr)"}}>
