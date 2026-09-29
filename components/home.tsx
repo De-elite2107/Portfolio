@@ -28,8 +28,9 @@ const Homepage = () => {
         <Text textAlign="center">
           <TypingAnimator
             textArray={[
-              "Cyber Security Expert, Full-stack Engineer and Web3 Specialist...",
-              "Based in Lagos...",
+              "Full-Stack Engineer and Cyber Security Expert...",
+              "Building Web, Mobile, Web3 and AI Products...",
+              "Robotics Engineer, Based in Lagos...",
             ]}
             cursorColor="#333"
             textColor="white"

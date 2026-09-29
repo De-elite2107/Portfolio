@@ -23,6 +23,9 @@ import UiUx from "@/svgs/UI_UX";
 import Quality from "@/svgs/quality";
 import Support from "@/svgs/support";
 import DevOps from "@/svgs/devops";
+import Blockchain from "@/svgs/blockchain";
+import AI from "@/svgs/ai";
+import SmartPhone from "@/svgs/smartphone";
 
 const Resume = () => {
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
@@ -95,16 +98,20 @@ const Resume = () => {
                 Redux Toolkit, and Angular for front-end engineering, ensuring
                 clean UI architecture and responsive design with Chakra UI and
                 Tailwind CSS. On the backend, I develop robust APIs and secure
-                systems using Laravel and Django, implementing Role-Based Access
+                systems using Laravel, Django, FastAPI, and Node.js, implementing Role-Based Access
                 Control (RBAC) and transaction workflows to strengthen data
                 integrity and user trust. I&apos;m proficient in SQL (PostgreSQL,
                 MySQL), RESTful API design, and have hands-on experience with
-                Docker, CI/CD pipelines, and cloud platforms like AWS. Beyond
+                Docker, CI/CD pipelines, and cloud platforms like AWS. My work
+                now also extends into Web3, writing Solidity smart contracts and
+                wallet-connected apps; into AI, integrating LLMs and
+                machine-learning models into real products; and into
+                cross-platform mobile apps with Flutter. Beyond
                 development, I focus on DevSecOps principles, security
                 hardening, and real-time system monitoring to ensure reliable
                 performance and protection against vulnerabilities — a mindset
-                I&apos;ve now backed with formal academic grounding, having just
-                signed out with a B.Sc. in Cyber Security, which sharpened my
+                I&apos;ve now backed with formal academic grounding, having
+                graduated with a B.Sc. in Cyber Security on 7 August 2026, which sharpened my
                 eye for threat modeling, secure system design, and risk-aware
                 engineering. My problem-solving mindset, collaborative spirit,
                 and passion for clean architecture allow me to consistently
@@ -527,6 +534,62 @@ const Resume = () => {
               </Box>
               <Text textAlign="center">HTML / CSS</Text>
             </Box>
+            <Box pb="3rem" m="auto">
+              <Box
+                mb="1rem"
+                className="ninety-five"
+                textAlign="center"
+                p="1rem"
+                borderRadius="50%"
+              >
+                <Box p="3rem" bg="#081f37" borderRadius="50%">
+                  95%
+                </Box>
+              </Box>
+              <Text textAlign="center">TypeScript</Text>
+            </Box>
+            <Box pb="3rem" m="auto">
+              <Box
+                mb="1rem"
+                className="ninety"
+                textAlign="center"
+                p="1rem"
+                borderRadius="50%"
+              >
+                <Box p="3rem" bg="#081f37" borderRadius="50%">
+                  90%
+                </Box>
+              </Box>
+              <Text textAlign="center">Node.js</Text>
+            </Box>
+            <Box pb="3rem" m="auto">
+              <Box
+                mb="1rem"
+                className="eighty-five"
+                textAlign="center"
+                p="1rem"
+                borderRadius="50%"
+              >
+                <Box p="3rem" bg="#081f37" borderRadius="50%">
+                  85%
+                </Box>
+              </Box>
+              <Text textAlign="center">Flutter</Text>
+            </Box>
+            <Box pb="3rem" m="auto">
+              <Box
+                mb="1rem"
+                className="eighty-five"
+                textAlign="center"
+                p="1rem"
+                borderRadius="50%"
+              >
+                <Box p="3rem" bg="#081f37" borderRadius="50%">
+                  85%
+                </Box>
+              </Box>
+              <Text textAlign="center">Solidity</Text>
+            </Box>
           </Flex>
         </Box>
         <Box color="white" mb="10rem">
@@ -771,6 +834,51 @@ const Resume = () => {
                 We integrate developments and operations to streamline
                 deployment processes, improve application reliability, and
                 automate workflows.
+              </Text>
+            </Box>
+            <Box
+              mr={isLargerThan400 ? "5rem" : ""}
+              w={isLargerThan400 ? "20rem" : "100%"}
+              mb="3rem"
+            >
+              <Flex alignItems="center" gap={2} mb="1rem">
+                <SmartPhone />
+                <Text fontWeight={800}>Mobile App Development</Text>
+              </Flex>
+              <Text lineHeight={8}>
+                We build cross-platform mobile apps with Flutter and React
+                Native, with secure sign-in, push notifications, and a single
+                codebase for Android and iOS.
+              </Text>
+            </Box>
+            <Box
+              mr={isLargerThan400 ? "5rem" : ""}
+              w={isLargerThan400 ? "20rem" : "100%"}
+              mb="3rem"
+            >
+              <Flex alignItems="center" gap={2} mb="1rem">
+                <Blockchain />
+                <Text fontWeight={800}>Web3 & Smart Contract Development</Text>
+              </Flex>
+              <Text lineHeight={8}>
+                We write Solidity smart contracts and build dApps with wallet
+                connection, on-chain payments, and blockchain data
+                integrations.
+              </Text>
+            </Box>
+            <Box
+              mr={isLargerThan400 ? "5rem" : ""}
+              w={isLargerThan400 ? "20rem" : "100%"}
+              mb="3rem"
+            >
+              <Flex alignItems="center" gap={2} mb="1rem">
+                <AI />
+                <Text fontWeight={800}>AI & Machine Learning Integration</Text>
+              </Flex>
+              <Text lineHeight={8}>
+                We integrate LLMs and machine-learning models into products,
+                from AI chat assistants and RAG search to detection and
+                prediction systems.
               </Text>
             </Box>
           </Grid>

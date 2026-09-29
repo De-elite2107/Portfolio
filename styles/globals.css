@@ -188,6 +188,13 @@ html{
 );
 }
 
+.eighty-five{
+  background-image: conic-gradient(
+    #1e549f 0 85%,
+    gray 15%
+);
+}
+
 .ninety{
   background-image: conic-gradient(
     #1e549f 0 90%,
