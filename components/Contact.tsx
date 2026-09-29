@@ -6,6 +6,7 @@ const channels = [
   { label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
   { label: "Phone", value: "+234 708 954 7793", href: "tel:+2347089547793" },
   { label: "WhatsApp", value: "Chat on WhatsApp", href: "https://wa.link/3bl1ku" },
+  { label: "Telegram", value: "@De_elite2107", href: "https://t.me/De_elite2107" },
   { label: "LinkedIn", value: "delight-adediran", href: "https://www.linkedin.com/in/delight-adediran-7151b022a/" },
   { label: "GitHub", value: "De-elite2107", href: "https://github.com/De-elite2107" },
   { label: "X", value: "@DelightAdediran", href: "https://x.com/DelightAdediran" },
