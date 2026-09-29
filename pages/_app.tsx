@@ -1,8 +1,5 @@
-'use client'
-import { fonts } from "@/components/fonts";
+import { fontVariables } from "@/components/fonts";
 import "@/styles/globals.css";
-import { CacheProvider } from '@chakra-ui/next-js';
-import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Router } from "next/router";
@@ -69,9 +66,7 @@ function useMonitor() {
 export default function App({ Component, pageProps }: AppProps) {
   useMonitor()
   return(
-    <CacheProvider>
-      <ChakraProvider>
-        <main className={fonts.arvo.className}>
+        <div className={`${fontVariables} app`}>
           <Head>
             <title>Delight Adediran | Full-Stack Engineer</title>
             <meta name="description" content="Portfolio of Delight Adediran, a Lagos-based full-stack engineer with a B.Sc. in Cyber Security, building web, mobile, Web3 and AI products." />
@@ -79,14 +74,13 @@ export default function App({ Component, pageProps }: AppProps) {
             <meta property="og:url" content="https://de-elite.netlify.app/" />
             <meta property="og:title" content="Delight Adediran | Full-Stack Engineer" />
             <meta property="og:description" content="Web, mobile, Web3 and AI products built by a security-focused full-stack engineer in Lagos." />
-            <meta property="og:image" content="https://de-elite.netlify.app/images/portfolio/portfolio.png" />
+            <meta property="og:image" content="https://de-elite.netlify.app/og.png" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+            <link rel="icon" href="/favicon.ico" sizes="any" />
           </Head>
           <Component {...pageProps} />
-        </main>
-      </ChakraProvider>
-    </CacheProvider>
+        </div>
   );
 }
