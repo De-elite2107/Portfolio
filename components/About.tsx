@@ -49,7 +49,7 @@ export default function About() {
             </div>
           </dl>
           <a className="button button--dark" href={CV_PATH} download={CV_FILENAME}>
-            Download CV (PDF)
+            Download CV
           </a>
         </div>
       </div>

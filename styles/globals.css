@@ -5,7 +5,7 @@
 ------------------------------------------------------------------ */
 :root {
   --paper: #eef1f4;
-  --surface: #ffffff;
+  --surface: #fcfdfe;
   --ink: #0b2239;
   --ink-2: #13304d;
   --slate: #536473;
@@ -78,6 +78,21 @@ ul {
   list-style: none;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: rgba(95, 201, 243, 0.35);
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -97,6 +112,12 @@ a {
 /* next/font defines --font-sans/--font-mono on this wrapper, not on :root. */
 .app {
   font-family: var(--font-sans);
+}
+
+.site-header :focus-visible,
+.hero :focus-visible,
+.site-footer :focus-visible {
+  outline-color: var(--cyan);
 }
 
 .container {
@@ -145,7 +166,11 @@ a {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.button:active {
+  transform: translateY(1px);
 }
 
 .button--light {
@@ -271,7 +296,7 @@ a {
 .hero {
   background: var(--ink);
   color: var(--on-ink);
-  padding-block: clamp(3.5rem, 8vw, 7rem) clamp(4rem, 9vw, 7.5rem);
+  padding-block: clamp(3rem, 7vw, 6rem) clamp(4rem, 9vw, 7rem);
 }
 
 .hero__inner {
@@ -287,7 +312,7 @@ a {
   font-stretch: 125%;
   line-height: 0.92;
   letter-spacing: -0.015em;
-  color: #ffffff;
+  color: #f5f9fc;
 }
 
 .hero__lede {
@@ -611,8 +636,37 @@ html.js-motion .signature:not(.is-started) .signature__hash {
 ------------------------------------------------------------------ */
 .capabilities {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2.75rem 3rem;
+}
+
+/* Odd count on two columns: the last domain takes the full row. */
+.capability:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 1024px) {
+  .capabilities {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .capability {
+    grid-column: span 2;
+  }
+
+  .capability:nth-child(-n + 2):nth-last-child(n + 4) {
+    grid-column: span 3;
+  }
+
+  .capability:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .capabilities {
+    grid-template-columns: 1fr;
+  }
 }
 
 .capability {
@@ -641,7 +695,7 @@ html.js-motion .signature:not(.is-started) .signature__hash {
 .tools li {
   padding: 0.2rem 0.6rem;
   border: 1px solid var(--rule);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: var(--surface);
   font-size: 0.88rem;
 }

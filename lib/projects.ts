@@ -116,7 +116,7 @@ export const projects: Project[] = [
   {
     title: "Machine learning & security systems",
     kind: "17 systems for private clients",
-    duration: "3 days – 1 week each",
+    duration: "3 days to 1 week each",
     status: "confidential",
     summary:
       "Phishing detection with XGBoost and fine-tuned BERT, hybrid intrusion detection, early-warning analytics, forensic log analysis and a RAG support desk.",
@@ -212,7 +212,7 @@ export const projects: Project[] = [
   {
     title: "Arduino robotics builds",
     kind: "Robotics for a client",
-    duration: "1 week – 1 month each",
+    duration: "1 week to 1 month each",
     status: "not-deployed",
     summary:
       "A servo-driven smart dustbin with ultrasonic sensing, a Bluetooth phone-controlled RC car with PWM motor control, and a cardboard robot.",
