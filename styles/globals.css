@@ -1,13 +1,18 @@
 /* ------------------------------------------------------------------
    Tokens
-   Light "audit report" page, one navy band for the hero. Seal green is
-   reserved for Live status; signal blue is links and focus.
+   "Audit report" page with navy bands for the header, hero and footer.
+   --ink/--ink-2 are the band colours; --text is body copy. Seal green is
+   reserved for Live status; signal blue is links and focus. Dark mode
+   follows the system setting and keeps the bands darker than the page.
 ------------------------------------------------------------------ */
 :root {
+  color-scheme: light;
   --paper: #eef1f4;
   --surface: #fcfdfe;
   --ink: #0b2239;
   --ink-2: #13304d;
+  --text: #0b2239;
+  --text-2: #13304d;
   --slate: #536473;
   --rule: #cbd3db;
   --signal: #0b6f9f;
@@ -15,6 +20,11 @@
   --cyan: #5fc9f3;
   --on-ink: #e6eef5;
   --on-ink-muted: #a9bccd;
+  --btn-bg: #0b2239;
+  --btn-bg-hover: #13304d;
+  --btn-fg: #e6eef5;
+  --field-border: #7a8a99;
+  --danger: #b3261e;
 
   --font-sans: "Archivo", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -31,6 +41,27 @@
   --radius: 8px;
   --gutter: clamp(1.25rem, 4vw, 2.5rem);
   --header-h: 4rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --paper: #0d1924;
+    --surface: #13212e;
+    --ink: #07121c;
+    --ink-2: #102336;
+    --text: #e3ebf2;
+    --text-2: #c3d1dd;
+    --slate: #9aabbb;
+    --rule: #26394b;
+    --signal: #6ccff5;
+    --seal: #4fc18c;
+    --btn-bg: #5fc9f3;
+    --btn-bg-hover: #8ad9f7;
+    --btn-fg: #07121c;
+    --field-border: #5d7184;
+    --danger: #ff8f85;
+  }
 }
 
 *,
@@ -54,7 +85,7 @@ html {
 body {
   margin: 0;
   background: var(--paper);
-  color: var(--ink);
+  color: var(--text);
   font-family: var(--font-sans);
   font-size: var(--step-0);
   line-height: 1.6;
@@ -144,7 +175,7 @@ a {
   z-index: 100;
   padding: 0.5rem 1rem;
   background: var(--surface);
-  color: var(--ink);
+  color: var(--text);
   border-radius: var(--radius-sm);
 }
 
@@ -192,12 +223,12 @@ a {
 }
 
 .button--dark {
-  background: var(--ink);
-  color: var(--on-ink);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
 }
 
 .button--dark:hover {
-  background: var(--ink-2);
+  background: var(--btn-bg-hover);
 }
 
 /* ------------------------------------------------------------------
@@ -321,11 +352,6 @@ a {
   font-size: var(--step-1);
   line-height: 1.5;
   color: var(--on-ink);
-}
-
-.hero__where {
-  margin-top: 0.75rem;
-  color: var(--on-ink-muted);
 }
 
 .hero__actions {
@@ -544,7 +570,7 @@ html.js-motion .signature:not(.is-started) .signature__hash {
   font-family: var(--font-mono);
   font-size: 0.74rem;
   line-height: 1.6;
-  color: var(--ink-2);
+  color: var(--text-2);
 }
 
 .project-link {
@@ -671,7 +697,7 @@ html.js-motion .signature:not(.is-started) .signature__hash {
 
 .capability {
   padding-top: 1.25rem;
-  border-top: 2px solid var(--ink);
+  border-top: 2px solid var(--text);
 }
 
 .capability__title {
@@ -822,10 +848,10 @@ html.js-motion .signature:not(.is-started) .signature__hash {
 .field textarea {
   width: 100%;
   padding: 0.7rem 0.85rem;
-  border: 1px solid #7a8a99;
+  border: 1px solid var(--field-border);
   border-radius: var(--radius-sm);
   background: var(--surface);
-  color: var(--ink);
+  color: var(--text);
   font: inherit;
 }
 
@@ -840,7 +866,7 @@ html.js-motion .signature:not(.is-started) .signature__hash {
 }
 
 .field__error {
-  color: #b3261e;
+  color: var(--danger);
   font-size: 0.9rem;
 }
 

@@ -68,10 +68,9 @@ export default function Hero({ nameHash }: Props) {
             Adediran
           </h1>
           <p className="hero__lede">
-            Full-stack engineer with a B.Sc. in Cyber Security. I build web, mobile, Web3 and AI products that are
-            secure by default and hold up in production.
+            Lagos-based full-stack engineer with a B.Sc. in Cyber Security, building secure web, mobile, Web3 and AI
+            products for clients anywhere.
           </p>
-          <p className="hero__where">Based in Lagos, Nigeria. Working with clients anywhere.</p>
           <div className="hero__actions">
             <a className="button button--light" href="#work">
               See my work

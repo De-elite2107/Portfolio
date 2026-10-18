@@ -9,7 +9,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="theme-color" content="#0B2239" />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0B2239" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121C" />
         <script dangerouslySetInnerHTML={{ __html: motionFlag }} />
       </Head>
       <body>
