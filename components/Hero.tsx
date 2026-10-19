@@ -1,111 +1,68 @@
-import { useEffect, useState } from "react";
-import Fingerprint from "@/components/Fingerprint";
-import { FINGERPRINT_SIZE, sha256Hex } from "@/lib/fingerprint";
+import Image from "next/image";
+import Reel from "@/components/Reel";
+import SilkCanvas from "@/components/SilkCanvas";
+import { Button } from "@/components/ui";
+import { CLIENT_COUNT, clients } from "@/lib/content";
 
-export const SIGNED_NAME = "Delight Adediran";
-const HEX_CHARS = "0123456789abcdef";
-const RESOLVE_MS = 1400;
+const reel = [
+  { src: "/images/work/d-threebubbles.jpg", alt: "ThreeBubbles car-wash membership site" },
+  { src: "/images/work/d-hightower.jpg", alt: "Hightower Global Church website" },
+  { src: "/images/work/d-citispa.jpg", alt: "Citi Spa & Sauna website" },
+  { src: "/images/portfolio/goldencity.png", alt: "GoldenCity property marketplace" },
+];
 
-type Props = {
-  // Digest computed at build time, so the page renders complete without JS
-  // and for visitors who prefer reduced motion.
-  nameHash: string;
-};
+const avatars = clients.slice(0, 3);
+// "10+" clients, three shown as logos.
+const remaining = parseInt(CLIENT_COUNT, 10) - avatars.length;
 
-export default function Hero({ nameHash }: Props) {
-  const [shown, setShown] = useState(nameHash.length);
-  const [display, setDisplay] = useState(nameHash);
-  const [computedHere, setComputedHere] = useState(false);
-  const [started, setStarted] = useState(false);
-
-  useEffect(() => {
-    let frame = 0;
-    let cancelled = false;
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    sha256Hex(SIGNED_NAME)
-      .then((hex) => {
-        if (cancelled) return;
-        // Only claim "computed in your browser" when the browser agrees with the build.
-        if (hex !== nameHash) return setStarted(true);
-        setComputedHere(true);
-        if (reduceMotion) return setStarted(true);
-
-        // Resolve left to right: settled characters are real, the rest is noise,
-        // and each settled hex character draws its four fingerprint squares.
-        const render = (n: number) => {
-          setShown(n);
-          setDisplay(
-            hex.slice(0, n) +
-              Array.from({ length: hex.length - n }, () => HEX_CHARS[Math.floor(Math.random() * 16)]).join("")
-          );
-        };
-        render(0);
-        setStarted(true);
-        const start = performance.now();
-        const tick = (now: number) => {
-          const n = Math.min(hex.length, Math.floor(((now - start) / RESOLVE_MS) * hex.length));
-          render(n);
-          if (n < hex.length) frame = requestAnimationFrame(tick);
-        };
-        frame = requestAnimationFrame(tick);
-      })
-      .catch(() => setStarted(true));
-
-    return () => {
-      cancelled = true;
-      cancelAnimationFrame(frame);
-    };
-  }, [nameHash]);
-
+export default function Hero() {
   return (
     <section className="hero" id="top">
-      <div className="container hero__inner">
+      <SilkCanvas variant="hero" />
+      <div className="hero__inner">
         <div className="hero__copy">
-          <h1 className="hero__name">
-            Delight
-            <br />
-            Adediran
-          </h1>
-          <p className="hero__lede">
-            Lagos-based full-stack engineer with a B.Sc. in Cyber Security, building secure web, mobile, Web3 and AI
-            products for clients anywhere.
+          <p className="badge" data-reveal="up">
+            <span className="badge__dot" aria-hidden="true" />
+            Available for new projects.
           </p>
-          <div className="hero__actions">
-            <a className="button button--light" href="#work">
-              See my work
-            </a>
-            <a className="button button--ghost" href="#contact">
-              Start a project
-            </a>
+          <h1 className="hero__title" data-reveal="rise">
+            Secure Software,
+            <br />
+            Built End to End.
+          </h1>
+          <p className="hero__lede" data-reveal="rise">
+            Full-stack engineer in Lagos building web, mobile, Web3 and AI products for clients anywhere, with security
+            built in from day one.
+          </p>
+          <div className="hero__actions" data-reveal="rise">
+            <Button href="#work">View Work</Button>
+            <Button href="#pricing" variant="dark">
+              See Pricing
+            </Button>
+          </div>
+          <div className="proof" data-reveal="rise">
+            <ul className="proof__avatars" aria-label="Some of the clients I have worked with">
+              {avatars.map((c) => (
+                <li key={c.name}>
+                  <Image src={c.logo} alt={c.name} width={45} height={45} />
+                </li>
+              ))}
+              <li className="proof__more" aria-hidden="true">
+                +{remaining}
+              </li>
+            </ul>
+            <p className="proof__text">Worked with {CLIENT_COUNT} clients</p>
           </div>
         </div>
 
-        <figure className={`signature${started ? " is-started" : ""}`}>
-          <Fingerprint
-            className="signature__grid"
-            hex={nameHash}
-            revealed={shown * 4}
-            label={`Visual fingerprint of the SHA-256 hash of "${SIGNED_NAME}"`}
-          />
-          <figcaption className="signature__caption">
-            <code className="signature__hash">
-              <span className="visually-hidden">SHA-256: {nameHash}</span>
-              <span aria-hidden="true">
-                {display.slice(0, 32)}
-                <br />
-                {display.slice(32)}
-              </span>
-            </code>
-            <span className="signature__note">
-              {computedHere
-                ? `SHA-256 of "${SIGNED_NAME}", computed in your browser just now. Each of the ${
-                    FINGERPRINT_SIZE ** 2
-                  } squares is one bit.`
-                : `SHA-256 of "${SIGNED_NAME}". Each of the ${FINGERPRINT_SIZE ** 2} squares is one bit.`}
-            </span>
-          </figcaption>
-        </figure>
+        <div className="hero__media">
+          <div className="glow-card">
+            <span className="glow-card__light" aria-hidden="true" />
+            <div className="glow-card__inner">
+              <Reel images={reel} sizes="(min-width: 810px) 460px, 92vw" priority />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,106 +1,132 @@
 import Image from "next/image";
+import { useState } from "react";
+import { ArrowUpRight, SealCheck } from "@phosphor-icons/react/dist/ssr";
 import Fingerprint from "@/components/Fingerprint";
-import { projects, statusLabel, type Project } from "@/lib/projects";
+import { SectionHead } from "@/components/ui";
+import { categoryLabel, projects, statusLabel, type Project, type ProjectCategory } from "@/lib/projects";
+
+const INITIAL = 6;
+const CARD_SIZES = "(min-width: 1200px) 363px, (min-width: 810px) 45vw, 92vw";
+const filters: ("all" | ProjectCategory)[] = ["all", "web", "apps", "web3", "ai"];
 
 type Props = {
-  // SHA-256 of each image-less project's title, drawn as its thumbnail.
+  // SHA-256 of each project title, drawn for projects without a screenshot.
   titleHashes: Record<string, string>;
 };
 
-function Status({ project }: { project: Project }) {
-  return (
-    <span className={`status status--${project.status}`}>
-      <span className="status__dot" aria-hidden="true" />
-      {statusLabel[project.status]}
-    </span>
-  );
-}
-
-function Stack({ items }: { items: string[] }) {
-  return (
-    <ul className="stack" aria-label="Tech stack">
-      {items.map((s) => (
-        <li key={s}>{s}</li>
-      ))}
-    </ul>
-  );
-}
-
-function Visual({ project, hash, sizes }: { project: Project; hash?: string; sizes: string }) {
-  if (project.image) {
-    return <Image src={project.image} alt={`Screenshot of ${project.title}`} fill sizes={sizes} />;
+function Visual({ project, hash }: { project: Project; hash?: string }) {
+  if (project.poster) {
+    return (
+      <div className="pcard__poster">
+        <Image src={project.poster} alt={`${project.title} on a phone`} fill sizes={CARD_SIZES} />
+      </div>
+    );
   }
-  return hash ? <Fingerprint className="shot__fingerprint" hex={hash} /> : null;
+  if (project.image) {
+    // Landscape screenshot: shown whole, over a blurred copy that fills the card.
+    return (
+      <div className="pcard__landscape">
+        <Image className="pcard__backdrop" src={project.image} alt="" fill sizes="120px" />
+        <div className="pcard__shot">
+          <Image src={project.image} alt={`Screenshot of ${project.title}`} fill sizes={CARD_SIZES} />
+        </div>
+      </div>
+    );
+  }
+  return hash ? (
+    <div className="pcard__print">
+      <Fingerprint hex={hash} />
+    </div>
+  ) : null;
 }
 
-function ProjectLink({ project }: { project: Project }) {
-  if (!project.url) return null;
+function Avatar({ project, hash }: { project: Project; hash?: string }) {
+  if (project.logo) return <Image className="pcard__avatar" src={project.logo} alt="" width={38} height={38} />;
+  return <span className="pcard__avatar pcard__avatar--print">{hash && <Fingerprint hex={hash} />}</span>;
+}
+
+function Card({ project, hash }: { project: Project; hash?: string }) {
   return (
-    <a className="project-link" href={project.url} target="_blank" rel="noopener noreferrer">
-      {project.linkLabel ?? "Visit site"}
-      <span className="visually-hidden"> for {project.title} (opens in a new tab)</span>
-    </a>
+    <article className="pcard">
+      <Visual project={project} hash={hash} />
+      <div className="pcard__top">
+        <Avatar project={project} hash={hash} />
+        <h3 className="pcard__title">{project.title}</h3>
+        {project.status === "live" && <SealCheck className="pcard__seal" size={18} weight="fill" aria-label="Live" />}
+      </div>
+      <div className="pcard__bottom">
+        <p className="pcard__meta">
+          <span className={`status status--${project.status}`}>
+            <span className="status__dot" aria-hidden="true" />
+            {statusLabel[project.status]}
+          </span>
+          <span aria-hidden="true">·</span>
+          <span>{project.duration}</span>
+        </p>
+        <p className="pcard__kind">{project.kind}</p>
+        <p className="pcard__summary">{project.summary}</p>
+        <p className="pcard__stack">
+          <span className="visually-hidden">Built with </span>
+          {project.stack.join(" · ")}
+        </p>
+        {project.url && (
+          <a className="pcard__link" href={project.url} target="_blank" rel="noopener noreferrer">
+            {project.linkLabel ?? "Visit site"}
+            <ArrowUpRight size={16} weight="bold" aria-hidden="true" />
+            <span className="visually-hidden"> for {project.title} (opens in a new tab)</span>
+          </a>
+        )}
+      </div>
+    </article>
   );
 }
 
 export default function Work({ titleHashes }: Props) {
-  const featured = projects.filter((p) => p.featured);
-  const rest = projects.filter((p) => !p.featured);
+  const [filter, setFilter] = useState<(typeof filters)[number]>("all");
+  const [expanded, setExpanded] = useState(false);
+
+  const matching = filter === "all" ? projects : projects.filter((p) => p.categories.includes(filter));
+  const shown = expanded ? matching : matching.slice(0, INITIAL);
 
   return (
     <section className="section" id="work" aria-labelledby="work-title">
-      <div className="container">
-        <header className="section__head">
-          <h2 className="section__title" id="work-title">
-            Selected work
-          </h2>
-          <p className="section__intro">Products I have built and shipped, most recent first.</p>
-        </header>
-
-        <div className="featured">
-          {featured.map((p) => (
-            <article className="feature" key={p.title}>
-              <div className="shot shot--large">
-                <Visual project={p} hash={titleHashes[p.title]} sizes="(min-width: 960px) 620px, 100vw" />
-              </div>
-              <div className="feature__body">
-                <p className="feature__kind">{p.kind}</p>
-                <h3 className="feature__title">{p.title}</h3>
-                <div className="feature__meta">
-                  <Status project={p} />
-                  <span>{p.duration}</span>
-                </div>
-                <p className="feature__details">{p.details ?? p.summary}</p>
-                <Stack items={p.stack} />
-                <ProjectLink project={p} />
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <h3 className="list-title">More projects</h3>
-        <ul className="project-list">
-          {rest.map((p) => (
-            <li className="project-row" key={p.title}>
-              <div className="shot shot--thumb">
-                <Visual project={p} hash={titleHashes[p.title]} sizes="200px" />
-              </div>
-              <div className="project-row__main">
-                <h4 className="project-row__title">{p.title}</h4>
-                <p className="project-row__kind">
-                  {p.kind}, {p.duration}
-                </p>
-                <p className="project-row__summary">{p.summary}</p>
-                <Stack items={p.stack} />
-              </div>
-              <div className="project-row__side">
-                <Status project={p} />
-                <ProjectLink project={p} />
-              </div>
-            </li>
-          ))}
-        </ul>
+      <SectionHead
+        id="work-title"
+        label="Projects"
+        title="Selected Work"
+        intro="Products I've designed, built and shipped for clients and for myself, from live platforms to confidential systems."
+      />
+      <div className="filters" role="group" aria-label="Filter projects">
+        {filters.map((f) => (
+          <button
+            key={f}
+            type="button"
+            className={`filter${filter === f ? " is-active" : ""}`}
+            aria-pressed={filter === f}
+            onClick={() => {
+              setFilter(f);
+              setExpanded(false);
+            }}
+          >
+            {f === "all" ? "All" : categoryLabel[f]}
+          </button>
+        ))}
       </div>
+      <div className="work-grid" aria-live="polite">
+        {shown.map((p) => (
+          <Card key={p.title} project={p} hash={titleHashes[p.title]} />
+        ))}
+      </div>
+      {matching.length > INITIAL && (
+        <div className="work-more">
+          <button type="button" className="btn btn--dark" onClick={() => setExpanded((e) => !e)} aria-expanded={expanded}>
+            <span className="btn__roll">
+              <span>{expanded ? "Show fewer" : `Show all ${matching.length} projects`}</span>
+              <span aria-hidden="true">{expanded ? "Show fewer" : `Show all ${matching.length} projects`}</span>
+            </span>
+          </button>
+        </div>
+      )}
     </section>
   );
 }

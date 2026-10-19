@@ -1,102 +1,56 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import * as Yup from "yup";
-import { EMAIL } from "@/lib/site";
+import { EnvelopeSimple, Phone } from "@phosphor-icons/react/dist/ssr";
+import { Pill, SocialIcon } from "@/components/ui";
+import { CAL_URL, EMAIL, socials } from "@/lib/site";
 
-const channels = [
-  { label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
-  { label: "Phone", value: "+234 708 954 7793", href: "tel:+2347089547793" },
-  { label: "WhatsApp", value: "Chat on WhatsApp", href: "https://wa.link/3bl1ku" },
-  { label: "Telegram", value: "@De_elite2107", href: "https://t.me/De_elite2107" },
-  { label: "LinkedIn", value: "delight-adediran", href: "https://www.linkedin.com/in/delight-adediran-7151b022a/" },
-  { label: "GitHub", value: "De-elite2107", href: "https://github.com/De-elite2107" },
-  { label: "X", value: "@DelightAdediran", href: "https://x.com/DelightAdediran" },
-  { label: "Instagram", value: "@de_elite21", href: "https://www.instagram.com/de_elite21/" },
-  { label: "Location", value: "Ikola Ogunseye, Lagos", href: "https://maps.app.goo.gl/gHrgVXChjT9sLAYC6" },
-];
-
-const schema = Yup.object({
-  name: Yup.string().trim().required("Enter your name."),
-  email: Yup.string().trim().email("Enter a valid email address.").required("Enter your email address."),
-  phone: Yup.string()
-    .trim()
-    .matches(/^\+?[\d\s()-]{7,20}$/, {
-      message: "Enter a phone number with digits only, or leave it blank.",
-      excludeEmptyString: true,
-    }),
-  message: Yup.string().trim().required("Tell me a little about the project."),
-});
-
-type Values = Yup.InferType<typeof schema>;
+const PHONE = { display: "+234 708 954 7793", href: "tel:+2347089547793" };
+const embedSrc = `${CAL_URL}?embed=true&theme=dark&layout=month_view`;
 
 export default function Contact() {
-  // The form is kept filled after opening the draft: if no mail app handles
-  // mailto:, the visitor still has their message to copy.
-  const onSubmit = (values: Values) => {
-    const subject = encodeURIComponent(`Project enquiry from ${values.name}`);
-    const body = encodeURIComponent(
-      `Name: ${values.name}\nEmail: ${values.email}\nPhone: ${values.phone || "Not given"}\n\n${values.message}`
-    );
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-  };
-
   return (
-    <section className="section section--rule" id="contact" aria-labelledby="contact-title">
-      <div className="container contact">
-        <div className="contact__intro">
-          <h2 className="section__title" id="contact-title">
-            Start a project
+    <section className="section" id="contact" aria-labelledby="contact-title">
+      <div className="contact">
+        <div className="contact__info" data-reveal="up">
+          <Pill>Contact Us</Pill>
+          <h2 className="contact__title" id="contact-title">
+            Book a Call
           </h2>
-          <p>
-            Tell me what you are building and when you need it. The form opens a pre-filled email in your mail app,
-            or you can reach me directly on any channel below.
+          <p className="contact__intro">
+            Pick a time for a free 15-minute call about your project: what you&apos;re building, who it&apos;s for and
+            when you need it. Prefer to write? Email or message me any time.
           </p>
-          <dl className="channels">
-            {channels.map((c) => (
-              <div key={c.label} className={c.label === "Email" ? "channels__wide" : undefined}>
-                <dt>{c.label}</dt>
-                <dd>
-                  <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
-                    {c.value}
-                  </a>
-                </dd>
-              </div>
-            ))}
+          <dl className="contact__channels">
+            <div>
+              <dt>Email</dt>
+              <dd>
+                <EnvelopeSimple size={20} aria-hidden="true" />
+                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+              </dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd>
+                <Phone size={20} aria-hidden="true" />
+                <a href={PHONE.href}>{PHONE.display}</a>
+              </dd>
+            </div>
           </dl>
+          <p className="contact__follow">Follow Me On</p>
+          <ul className="socials">
+            {socials.map((s) => (
+              <li key={s.key}>
+                <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={`${s.label} (opens in a new tab)`}>
+                  <SocialIcon name={s.key} size={22} />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-
-        <Formik<Values>
-          initialValues={{ name: "", email: "", phone: "", message: "" }}
-          validationSchema={schema}
-          onSubmit={onSubmit}
-        >
-          <Form className="form" noValidate>
-            <div className="field">
-              <label htmlFor="name">Name</label>
-              <Field id="name" name="name" autoComplete="name" />
-              <ErrorMessage name="name" component="p" className="field__error" />
-            </div>
-            <div className="field">
-              <label htmlFor="email">Email</label>
-              <Field id="email" name="email" type="email" autoComplete="email" />
-              <ErrorMessage name="email" component="p" className="field__error" />
-            </div>
-            <div className="field">
-              <label htmlFor="phone">
-                Phone <span className="field__optional">(optional)</span>
-              </label>
-              <Field id="phone" name="phone" type="tel" autoComplete="tel" />
-              <ErrorMessage name="phone" component="p" className="field__error" />
-            </div>
-            <div className="field">
-              <label htmlFor="message">Project details</label>
-              <Field id="message" name="message" as="textarea" rows={6} />
-              <ErrorMessage name="message" component="p" className="field__error" />
-            </div>
-            <button className="button button--dark" type="submit">
-              Open email draft
-            </button>
-          </Form>
-        </Formik>
+        <div className="contact__calendar">
+          <iframe src={embedSrc} title="Book a 15-minute call on Cal.com" loading="lazy" />
+          <a className="contact__fallback" href={CAL_URL} target="_blank" rel="noopener noreferrer">
+            Calendar not loading? Open it on Cal.com
+          </a>
+        </div>
       </div>
     </section>
   );

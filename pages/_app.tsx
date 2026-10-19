@@ -1,4 +1,4 @@
-import { fontVariables } from "@/components/fonts";
+import "lenis/dist/lenis.css";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -66,14 +66,14 @@ function useMonitor() {
 export default function App({ Component, pageProps }: AppProps) {
   useMonitor()
   return(
-        <div className={`${fontVariables} app`}>
+        <div className="app">
           <Head>
-            <title>Delight Adediran | Full-Stack Engineer</title>
-            <meta name="description" content="Portfolio of Delight Adediran, a Lagos-based full-stack engineer with a B.Sc. in Cyber Security, building web, mobile, Web3 and AI products." />
+            <title>Delight Adediran | De-eliteTech</title>
+            <meta name="description" content="De-eliteTech is Delight Adediran, a Lagos-based full-stack engineer with a B.Sc. in Cyber Security, building secure web, mobile, Web3 and AI products for clients anywhere." />
             <meta property="og:type" content="website" />
             <meta property="og:url" content="https://de-elite.netlify.app/" />
-            <meta property="og:title" content="Delight Adediran | Full-Stack Engineer" />
-            <meta property="og:description" content="Web, mobile, Web3 and AI products built by a security-focused full-stack engineer in Lagos." />
+            <meta property="og:title" content="Delight Adediran | De-eliteTech" />
+            <meta property="og:description" content="Secure software, built end to end: web, mobile, Web3 and AI products by a security-focused full-stack engineer in Lagos." />
             <meta property="og:image" content="https://de-elite.netlify.app/og.png" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
